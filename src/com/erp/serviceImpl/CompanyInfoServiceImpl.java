@@ -23,7 +23,7 @@ import com.erp.util.PageUtil;
 * <p>Description:福产流通科技</p>
 * <p>Copyright: Copyright (c) 2006</p>
 * <p>Company:福产流通科技有限公司</p>
-* @author lsy 756514656@qq.com
+* @author wjw.happy.love@163.com
 * @date 2013-4-28 下午12:52:04
 * @version V1.0
 */

@@ -3,7 +3,7 @@
 * @Title: FunctionServiceImpl.java
 * @Package com.erp.serviceImpl
 * @Description: TODO:
-* @author lsy 756514656@qq.com
+* @author wjw.happy.love@163.com
 * @date 2013-5-9 下午1:48:01
 * @Copyright: 2013 www.example.com Inc. All rights reserved.
 * @version V1.0  
@@ -36,7 +36,7 @@ import com.erp.viewModel.TreeModel;
  * <p>Description:福产流通科技</p>
  * <p>Copyright: Copyright (c) 2006</p>
  * <p>Company:福产流通科技有限公司</p>
- * @author lsy 756514656@qq.com
+ * @author wjw.happy.love@163.com
  * @date 2013-5-9 下午1:48:01
  * @version V1.0
  */

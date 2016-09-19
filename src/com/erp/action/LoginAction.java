@@ -26,7 +26,7 @@ import com.erp.viewModel.Json;
  * <p>Description:福产流通科技</p>
  * <p>Copyright: Copyright (c) 2012</p>
  * <p>Company:福产流通科技</p>
- * @author shouyin 756514656@qq.com
+ * @author wjw.happy.love@163.com
  * @date 2013-4-19 上午10:13:47
  * @version V1.0
  */
