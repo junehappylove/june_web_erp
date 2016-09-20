@@ -58,11 +58,19 @@
 	<appender name="EMAIL_QQ" class="org.apache.log4j.net.SMTPAppender">
 		<param name="Threshold" value="INFO" />
 		<param name="BufferSize" value="128" />
+<<<<<<< HEAD
 		<param name="SMTPHost" value="smtp.163.com" /><!-- smtp.qq.com -->
 		<param name="SMTPUsername" value="xxx" /><!-- your name -->
 		<param name="SMTPPassword" value="myxxx" /><!-- your pass -->
 		<param name="From" value="xxx@163.com" /><!-- your email -->
 		<param name="To" value="wjw.happy.love@163.com" />
+=======
+		<param name="SMTPHost" value="smtp.qq.com" />
+		<param name="SMTPUsername" value="1417192483" />
+		<param name="SMTPPassword" value="2009010158" />
+		<param name="From" value="1417192483@qq.com" />
+		<param name="To" value="980154978@qq.com" />
+>>>>>>> e4fc84c7443f6de1b4ee99233d60a58698a26bc8
 		<param name="Subject" value="ERP项目异常记录" />
 		<param name="LocationInfo" value="true" />
 		<param name="SMTPDebug" value="true" />
