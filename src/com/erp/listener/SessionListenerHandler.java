@@ -12,11 +12,14 @@ import javax.servlet.http.HttpSessionListener;
 
 import net.sf.ehcache.CacheManager;
 
-@SuppressWarnings("deprecation")
+/**
+ * 
+ * @author iscas
+ *
+ */
 public class SessionListenerHandler implements HttpSessionListener, HttpSessionBindingListener, HttpSession{
 
 	public void sessionCreated(HttpSessionEvent se) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -26,63 +29,52 @@ public class SessionListenerHandler implements HttpSessionListener, HttpSessionB
 	}
 
 	public void valueBound(HttpSessionBindingEvent arg0) {
-		// TODO Auto-generated method stub
 
 	}
 
 	public void valueUnbound(HttpSessionBindingEvent arg0) {
-		// TODO Auto-generated method stub
 
 	}
 
 	public Object getAttribute(String name) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public Enumeration getAttributeNames() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public long getCreationTime() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	public String getId() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public long getLastAccessedTime() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	public int getMaxInactiveInterval() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	public ServletContext getServletContext() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@SuppressWarnings("deprecation")
 	public HttpSessionContext getSessionContext() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public Object getValue(String name) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public String[] getValueNames() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -92,32 +84,26 @@ public class SessionListenerHandler implements HttpSessionListener, HttpSessionB
 	}
 
 	public boolean isNew() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	public void putValue(String name, Object value) {
-		// TODO Auto-generated method stub
 
 	}
 
 	public void removeAttribute(String name) {
-		// TODO Auto-generated method stub
 
 	}
 
 	public void removeValue(String name) {
-		// TODO Auto-generated method stub
 
 	}
 
 	public void setAttribute(String name, Object value) {
-		// TODO Auto-generated method stub
 
 	}
 
 	public void setMaxInactiveInterval(int interval) {
-		// TODO Auto-generated method stub
 
 	}
 
