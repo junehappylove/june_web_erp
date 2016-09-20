@@ -21,3 +21,5 @@ hs_err_pid*
 .mymetadata
 /WebRoot/WEB-INF/classes/
 /WebRoot/dbsql.sql
+/src/log4j.xml
+/src/config.properties
