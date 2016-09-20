@@ -12,8 +12,7 @@
 	</context-param>
 	<filter>
 		<filter-name>shiroFilter</filter-name>
-		<filter-class>org.springframework.web.filter.DelegatingFilterProxy
-		</filter-class>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>shiroFilter</filter-name>
@@ -21,8 +20,7 @@
 	</filter-mapping>
 	<servlet>
 		<servlet-name>kaptcha</servlet-name>
-		<servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet
-		</servlet-class>
+		<servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
 		<init-param>
 			<description> Border around kaptcha. Legal values are yes or no.
 			</description>
@@ -125,8 +123,7 @@
 	<servlet>
 		<display-name>FCExporter</display-name>
 		<servlet-name>FCExporter</servlet-name>
-		<servlet-class>com.fusioncharts.exporter.servlet.FCExporter
-		</servlet-class>
+		<servlet-class>com.fusioncharts.exporter.servlet.FCExporter</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
@@ -146,13 +143,11 @@
 		<param-value>60000</param-value>
 	</context-param>
 	<listener>
-		<listener-class>org.springframework.web.util.Log4jConfigListener
-		</listener-class>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
 	</listener>
 	<filter>
 		<filter-name>druidWebStatFilter</filter-name>
-		<filter-class>com.alibaba.druid.support.http.WebStatFilter
-		</filter-class>
+		<filter-class>com.alibaba.druid.support.http.WebStatFilter</filter-class>
 		<init-param>
 			<param-name>exclusions</param-name>
 			<param-value>/css/*,/js/*,*.js,*.css,/druid*,/attached/*,*.jsp
@@ -165,8 +160,7 @@
 	</filter>
 	<filter>
 		<filter-name>openSessionInViewFilter</filter-name>
-		<filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter
-		</filter-class>
+		<filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
 		<init-param>
 			<param-name>singleSession</param-name>
 			<param-value>true</param-value>
@@ -174,13 +168,11 @@
 	</filter>
 	<filter>
 		<filter-name>struts2</filter-name>
-		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
-		</filter-class>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
 	</filter>
 	<filter>
 		<filter-name>encodingFilter</filter-name>
-		<filter-class>org.springframework.web.filter.CharacterEncodingFilter
-		</filter-class>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
 		<init-param>
 			<param-name>encoding</param-name>
 			<param-value>UTF-8</param-value>
@@ -207,21 +199,17 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener
-		</listener-class>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	<listener>
-		<listener-class>org.springframework.web.util.IntrospectorCleanupListener
-		</listener-class>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
 	</listener>
 	<listener>
-		<listener-class>com.erp.listener.SessionListenerHandler
-		</listener-class>
+		<listener-class>com.erp.listener.SessionListenerHandler</listener-class>
 	</listener>
 	<servlet>
 		<servlet-name>druidStatView</servlet-name>
-		<servlet-class>com.alibaba.druid.support.http.StatViewServlet
-		</servlet-class>
+		<servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>druidStatView</servlet-name>

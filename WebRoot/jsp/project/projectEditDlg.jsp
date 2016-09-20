@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <script type="text/javascript">
 	var $dg;
 	var $tree;
@@ -301,142 +301,173 @@
 	}
 </script>
 <style>
-	.easyui-textbox{
-		height: 18px;
-		width: 170px;
-		line-height: 16px;
-	    /*border-radius: 3px 3px 3px 3px;*/
-	    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-	    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
-	}
-	
-	textarea:focus, input[type="text"]:focus{
-	    border-color: rgba(82, 168, 236, 0.8);
-	    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
-	    outline: 0 none;
-		}
-		
-	
-	fieldset {
-	    border: 0 none;
-	    margin: 0;
-	    padding: 0;
-	}
-	legend {
-	    -moz-border-bottom-colors: none;
-	    -moz-border-left-colors: none;
-	    -moz-border-right-colors: none;
-	    -moz-border-top-colors: none;
-	    border-color: #E5E5E5;
-	    border-image: none;
-	    border-style: none none solid;
-	    border-width: 0 0 1px;
-	    color: #999999;
-	    line-height: 20px;
-	    display: block;
-	    margin-bottom: 10px;
-	    padding: 0;
-	    width: 100%;
-	}
-	input, textarea {
-	    font-weight: normal;
-	}
-	.table {
-	    background-color: transparent;
-	    border-collapse: collapse;
-	    border-spacing: 0;
-	    max-width: 100%;
-	}
-	
-	.table{
-		text-align:left;
-		padding: 6px 10px 6px 10px;
-	}
-	.table th{
-		text-align:left;
-		padding: 6px 10px 6px 10px;
-	}
-	.table td{
-		text-align:left;
-		padding: 6px 10px 6px 10px;
-	}
+.easyui-textbox {
+	height: 18px;
+	width: 170px;
+	line-height: 16px;
+	/*border-radius: 3px 3px 3px 3px;*/
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+	transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+
+textarea:focus, input[type="text"]:focus {
+	border-color: rgba(82, 168, 236, 0.8);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px
+		rgba(82, 168, 236, 0.6);
+	outline: 0 none;
+}
+
+fieldset {
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+}
+
+legend {
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	border-color: #E5E5E5;
+	border-image: none;
+	border-style: none none solid;
+	border-width: 0 0 1px;
+	color: #999999;
+	line-height: 20px;
+	display: block;
+	margin-bottom: 10px;
+	padding: 0;
+	width: 100%;
+}
+
+input, textarea {
+	font-weight: normal;
+}
+
+.table {
+	background-color: transparent;
+	border-collapse: collapse;
+	border-spacing: 0;
+	max-width: 100%;
+}
+
+.table {
+	text-align: left;
+	padding: 6px 10px 6px 10px;
+}
+
+.table th {
+	text-align: left;
+	padding: 6px 10px 6px 10px;
+}
+
+.table td {
+	text-align: left;
+	padding: 6px 10px 6px 10px;
+}
 </style>
-	<div data-options="region:'center',border:false" title="">
-	<input name="tempId" id="tempId"  type="hidden" value="<%=request.getParameter("tempId")==null?"":request.getParameter("tempId")%>"/>
-		<form id="form" method="post">
-			<div id="tt">
-				<div title="基本资料" data-options="iconCls:'icon-cstbase'" style="padding:10px">
-						<fieldset>
-							<legend>基本资料编辑</legend>
-							<input name="projectId" id="projectId"  type="hidden"/>
-							<input name="created" id="created"  type="hidden"/>
-							<input name="creater" id="creater"  type="hidden"/>
-							<input name="status" id="status"  type="hidden"/>
-							<input name="inserted" id="inserted"  type="hidden"/>
-							<input name="updated" id="updated"  type="hidden"/>
-							<input name="deleted" id="deleted"  type="hidden"/>
-							 <table class="table">
-								 <tr>
-								    <th>项目名称</th>
-									<td><input name="name" id="name" placeholder="请输入项目名称" class="easyui-textbox easyui-validatebox" type="text" data-options="required:true"/></td>
-									<th>项目编码</th>
-									<td><input name="myid" id="myid" type="text"  class="easyui-textbox easyui-validatebox" data-options="required:true"/></td>
-									<th>立项日期</th>
-									<td><input name="setupDate" id="setupDate" type="text" class="easyui-textbox easyui-datebox" /></td>
-								 </tr>
-								 <tr>
-									<th>项目类型</th>
-									<td><input id="classId" name="classId" type="text" class="easyui-textbox easyui-validatebox" /><input id="className" name="className" type="hidden"/></td>
-								    <th>客户名称</th>
-									<td><input name="customerId" id="customerId" type="text" class="easyui-textbox easyui-validatebox" /><input id="customerMyid" name="customerMyid" type="hidden"/></td>
-								    <th>联系人</th>
-									<td><input id="contacts" name="contacts" type="text" class="easyui-textbox easyui-validatebox" /></td>
-								 </tr>
-								  <tr>
-									<th>联系人电话</th>
-									<td><input id="telNo" name="telNo" type="text" class="easyui-textbox easyui-validatebox"/></td>
-									<th>手机</th>
-									<td><input id="mobile" name="mobile" type="text" class="easyui-textbox easyui-validatebox"/></td>
-									 <th>项目来源</th>
-									<td><input id="sourceId" name="sourceId" type="text" class="easyui-textbox easyui-validatebox"/><input id="sourceName" name="sourceName" type="hidden"/></td>
-								 </tr>
-								 <tr>
-									<th>项目预算</th>
-									<td><input name="budget" id="budget" type="text" class="easyui-textbox easyui-validatebox" /></td>
-									<th>开始时间</th>
-									<td><input id="startTime" name="startTime" type="text" class="easyui-textbox easyui-datebox"/></td>
-									<th>结束时间</th>
-									<td><input id="endTime" name="endTime" type="text" class="easyui-textbox easyui-datebox"/></td>
-								 </tr>
-								 <tr>
-									<th>项目负责人</th>
-									<td><input name="managerId" id="managerId" type="text" class="easyui-textbox easyui-validatebox" /><input id="managerName" name="managerName" type="hidden"/></td>
-								 </tr>
-								 <tr>
-									<th>备注</th>
-									<td colspan="5"><textarea class="easyui-textbox" id="description" name="description"  style="width: 700px;height: 80px;"></textarea></td>
-								</tr>
-							   </table>
-						</fieldset>
+<div data-options="region:'center',border:false" title="">
+	<input name="tempId" id="tempId" type="hidden"
+		value="<%=request.getParameter("tempId")==null?"":request.getParameter("tempId")%>" />
+	<form id="form" method="post">
+		<div id="tt">
+			<div title="基本资料" data-options="iconCls:'icon-cstbase'"
+				style="padding: 10px">
+				<fieldset>
+					<legend>基本资料编辑</legend>
+					<input name="projectId" id="projectId" type="hidden" /> <input
+						name="created" id="created" type="hidden" /> <input name="creater"
+						id="creater" type="hidden" /> <input name="status" id="status"
+						type="hidden" /> <input name="inserted" id="inserted"
+						type="hidden" /> <input name="updated" id="updated" type="hidden" />
+					<input name="deleted" id="deleted" type="hidden" />
+					<table class="table">
+						<tr>
+							<th>项目名称</th>
+							<td><input name="name" id="name" placeholder="请输入项目名称"
+								class="easyui-textbox easyui-validatebox" type="text"
+								data-options="required:true" /></td>
+							<th>项目编码</th>
+							<td><input name="myid" id="myid" type="text"
+								class="easyui-textbox easyui-validatebox"
+								data-options="required:true" /></td>
+							<th>立项日期</th>
+							<td><input name="setupDate" id="setupDate" type="text"
+								class="easyui-textbox easyui-datebox" /></td>
+						</tr>
+						<tr>
+							<th>项目类型</th>
+							<td><input id="classId" name="classId" type="text"
+								class="easyui-textbox easyui-validatebox" /><input
+								id="className" name="className" type="hidden" /></td>
+							<th>客户名称</th>
+							<td><input name="customerId" id="customerId" type="text"
+								class="easyui-textbox easyui-validatebox" /><input
+								id="customerMyid" name="customerMyid" type="hidden" /></td>
+							<th>联系人</th>
+							<td><input id="contacts" name="contacts" type="text"
+								class="easyui-textbox easyui-validatebox" /></td>
+						</tr>
+						<tr>
+							<th>联系人电话</th>
+							<td><input id="telNo" name="telNo" type="text"
+								class="easyui-textbox easyui-validatebox" /></td>
+							<th>手机</th>
+							<td><input id="mobile" name="mobile" type="text"
+								class="easyui-textbox easyui-validatebox" /></td>
+							<th>项目来源</th>
+							<td><input id="sourceId" name="sourceId" type="text"
+								class="easyui-textbox easyui-validatebox" /><input
+								id="sourceName" name="sourceName" type="hidden" /></td>
+						</tr>
+						<tr>
+							<th>项目预算</th>
+							<td><input name="budget" id="budget" type="text"
+								class="easyui-textbox easyui-validatebox" /></td>
+							<th>开始时间</th>
+							<td><input id="startTime" name="startTime" type="text"
+								class="easyui-textbox easyui-datebox" /></td>
+							<th>结束时间</th>
+							<td><input id="endTime" name="endTime" type="text"
+								class="easyui-textbox easyui-datebox" /></td>
+						</tr>
+						<tr>
+							<th>项目负责人</th>
+							<td><input name="managerId" id="managerId" type="text"
+								class="easyui-textbox easyui-validatebox" /><input
+								id="managerName" name="managerName" type="hidden" /></td>
+						</tr>
+						<tr>
+							<th>备注</th>
+							<td colspan="5"><textarea class="easyui-textbox"
+									id="description" name="description"
+									style="width: 700px; height: 80px;"></textarea></td>
+						</tr>
+					</table>
+				</fieldset>
+			</div>
+			<div title="项目进度记录" data-options="iconCls:'icon-help'">
+				<table id="dg"></table>
+				<div id="tb" style="padding: 2px 0">
+					<table cellpadding="0" cellspacing="0">
+						<tr>
+							<td style="padding-left: 2px"><shiro:hasPermission
+									name="cstConEdit">
+									<a href="javascript:void(0);" class="easyui-linkbutton"
+										iconCls="icon-add" plain="true" onclick="addRows();">添加</a>
+									<a href="javascript:void(0);" class="easyui-linkbutton"
+										iconCls="icon-edit" plain="true" onclick="editRows();">编辑</a>
+									<a href="javascript:void(0);" class="easyui-linkbutton"
+										iconCls="icon-end" plain="true" onclick="endEdit();">结束编辑</a>
+									<a href="javascript:void(0);" class="easyui-linkbutton"
+										iconCls="icon-remove" plain="true" onclick="removeRows();">删除</a>
+									<a href="javascript:void(0);" class="easyui-linkbutton"
+										iconCls="icon-save" plain="true" onclick="saveRows();">保存</a>
+								</shiro:hasPermission></td>
+						</tr>
+					</table>
 				</div>
-				<div title="项目进度记录" data-options="iconCls:'icon-help'">
-						<table id="dg"></table>
-							<div id="tb" style="padding:2px 0">
-								<table cellpadding="0" cellspacing="0">
-									<tr>
-										<td style="padding-left:2px">
-											<shiro:hasPermission name="cstConEdit">
-												<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="addRows();">添加</a>
-												<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editRows();">编辑</a>
-												<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-end" plain="true" onclick="endEdit();">结束编辑</a>
-												<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="removeRows();">删除</a>
-												<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="saveRows();">保存</a>
-											</shiro:hasPermission>
-										</td>
-									</tr>
-								</table>
-							</div>
-				</div>
-		  </div>
-		</form>
-	</div>
+			</div>
+		</div>
+	</form>
+</div>

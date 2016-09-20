@@ -3,11 +3,12 @@
 	position: absolute;
 	padding: 5px;
 	z-index: 100008;
-	text-shadow:none;
-	font-weight:500;
-	text-transform:uppercase;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif
+	text-shadow: none;
+	font-weight: 500;
+	text-transform: uppercase;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
 }
+
 .tipsy-inner {
 	background-color: #000;
 	color: #FFF;
@@ -16,15 +17,15 @@
 	text-align: center;
 }
 /* Rounded corners */
-  .tipsy-inner {
-/*	border-radius: 2px;
+.tipsy-inner {
+	/*	border-radius: 2px;
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;*/
+	
 }
 /* Uncomment for shadow */
-  /*.tipsy-inner { box-shadow: 0 0 5px #000000; -webkit-box-shadow: 0 0 5px #000000; -moz-box-shadow: 0 0 5px #000000; }*/
-  
-  .tipsy-arrow {
+/*.tipsy-inner { box-shadow: 0 0 5px #000000; -webkit-box-shadow: 0 0 5px #000000; -moz-box-shadow: 0 0 5px #000000; }*/
+.tipsy-arrow {
 	position: absolute;
 	width: 0;
 	height: 0;
@@ -32,18 +33,22 @@
 	border: 5px dashed #000;
 }
 /* Rules to colour arrows */
-  .tipsy-arrow-n {
+.tipsy-arrow-n {
 	border-bottom-color: #000;
 }
+
 .tipsy-arrow-s {
 	border-top-color: #000;
 }
+
 .tipsy-arrow-e {
 	border-left-color: #000;
 }
+
 .tipsy-arrow-w {
 	border-right-color: #000;
 }
+
 .tipsy-n .tipsy-arrow {
 	top: 0px;
 	left: 50%;
@@ -53,6 +58,7 @@
 	border-left-color: transparent;
 	border-right-color: transparent;
 }
+
 .tipsy-nw .tipsy-arrow {
 	top: 0;
 	left: 10px;
@@ -61,6 +67,7 @@
 	border-left-color: transparent;
 	border-right-color: transparent;
 }
+
 .tipsy-ne .tipsy-arrow {
 	top: 0;
 	right: 10px;
@@ -69,6 +76,7 @@
 	border-left-color: transparent;
 	border-right-color: transparent;
 }
+
 .tipsy-s .tipsy-arrow {
 	bottom: 0;
 	left: 50%;
@@ -78,6 +86,7 @@
 	border-left-color: transparent;
 	border-right-color: transparent;
 }
+
 .tipsy-sw .tipsy-arrow {
 	bottom: 0;
 	left: 10px;
@@ -86,6 +95,7 @@
 	border-left-color: transparent;
 	border-right-color: transparent;
 }
+
 .tipsy-se .tipsy-arrow {
 	bottom: 0;
 	right: 10px;
@@ -94,6 +104,7 @@
 	border-left-color: transparent;
 	border-right-color: transparent;
 }
+
 .tipsy-e .tipsy-arrow {
 	right: 0;
 	top: 50%;
@@ -103,6 +114,7 @@
 	border-top-color: transparent;
 	border-bottom-color: transparent;
 }
+
 .tipsy-w .tipsy-arrow {
 	left: 0;
 	top: 50%;

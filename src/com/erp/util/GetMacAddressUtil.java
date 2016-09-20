@@ -4,43 +4,32 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
 /**
-* 类功能说明 TODO:获取物理地址 
-* 类修改者
-* 修改日期
-* 修改说明
-* <p>Title: GetMacAddressUtil.java</p>
-* <p>Description:福产流通科技</p>
-* <p>Copyright: Copyright (c) 2006</p>
-* <p>Company:福产流通科技有限公司</p>
-* @author wjw.happy.love@163.com
-* @date 2013-5-2 下午1:48:52
-* @version V1.0
-*/
+ * 类功能说明 获取物理地址 
+ * 
+ * @author wjw.happy.love@163.com
+ * @date 2013-5-2 下午1:48:52
+ * @version V1.0
+ */
 
-public class GetMacAddressUtil
-{
+public class GetMacAddressUtil {
 	/**
-	 * 获取当前操作系统名称. 
-	 * return 操作系统名称 例如:windows,Linux,Unix等.
+	 * 获取当前操作系统名称. return 操作系统名称 例如:windows,Linux,Unix等.
 	 */
-	public static String getOSName()
-	{
+	public static String getOSName() {
 		return System.getProperty("os.name").toLowerCase();
 	}
 
 	/**
 	 * 获取Unix网卡的mac地址.
+	 * 
 	 * @return mac地址
 	 */
-	public static String getUnixMACAddress()
-	{
+	public static String getUnixMACAddress() {
 		String mac = null;
 		BufferedReader bufferedReader = null;
 		Process process = null;
-		try
-		{
+		try {
 			/**
 			 * Unix下的命令，一般取eth0作为本地主网卡 显示信息中包含有mac地址信息
 			 */
@@ -48,8 +37,7 @@ public class GetMacAddressUtil
 			bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 			String line = null;
 			int index = -1;
-			while ((line = bufferedReader.readLine()) != null)
-			{
+			while ((line = bufferedReader.readLine()) != null) {
 				/**
 				 * 寻找标示字符串[hwaddr]
 				 */
@@ -57,8 +45,7 @@ public class GetMacAddressUtil
 				/**
 				 * 找到了
 				 */
-				if (index != -1)
-				{
+				if (index != -1) {
 					/**
 					 * 取出mac地址并去除2边空格
 					 */
@@ -66,19 +53,14 @@ public class GetMacAddressUtil
 					break;
 				}
 			}
-		} catch (IOException e)
-		{
+		} catch (IOException e) {
 			e.printStackTrace();
-		} finally
-		{
-			try
-			{
-				if (bufferedReader != null)
-				{
+		} finally {
+			try {
+				if (bufferedReader != null) {
 					bufferedReader.close();
 				}
-			} catch (IOException e1)
-			{
+			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
 			bufferedReader = null;
@@ -93,13 +75,11 @@ public class GetMacAddressUtil
 	 * 
 	 * @return mac地址
 	 */
-	public static String getLinuxMACAddress()
-	{
+	public static String getLinuxMACAddress() {
 		String mac = null;
 		BufferedReader bufferedReader = null;
 		Process process = null;
-		try
-		{
+		try {
 			/**
 			 * linux下的命令，一般取eth0作为本地主网卡 显示信息中包含有mac地址信息
 			 */
@@ -107,14 +87,12 @@ public class GetMacAddressUtil
 			bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 			String line = null;
 			int index = -1;
-			while ((line = bufferedReader.readLine()) != null)
-			{
+			while ((line = bufferedReader.readLine()) != null) {
 				index = line.toLowerCase().indexOf("硬件地址");
 				/**
 				 * 找到了
 				 */
-				if (index != -1)
-				{
+				if (index != -1) {
 					/**
 					 * 取出mac地址并去除2边空格
 					 */
@@ -122,19 +100,14 @@ public class GetMacAddressUtil
 					break;
 				}
 			}
-		} catch (IOException e)
-		{
+		} catch (IOException e) {
 			e.printStackTrace();
-		} finally
-		{
-			try
-			{
-				if (bufferedReader != null)
-				{
+		} finally {
+			try {
+				if (bufferedReader != null) {
 					bufferedReader.close();
 				}
-			} catch (IOException e1)
-			{
+			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
 			bufferedReader = null;
@@ -149,13 +122,11 @@ public class GetMacAddressUtil
 	 * 
 	 * @return mac地址
 	 */
-	public static String getWindowsMACAddress()
-	{
+	public static String getWindowsMACAddress() {
 		String mac = null;
 		BufferedReader bufferedReader = null;
 		Process process = null;
-		try
-		{
+		try {
 			/**
 			 * windows下的命令，显示信息中包含有mac地址信息
 			 */
@@ -163,17 +134,14 @@ public class GetMacAddressUtil
 			bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 			String line = null;
 			int index = -1;
-			while ((line = bufferedReader.readLine()) != null)
-			{
+			while ((line = bufferedReader.readLine()) != null) {
 				/**
 				 * 寻找标示字符串[physical address]
 				 */
 				index = line.toLowerCase().indexOf("physical address");
-				if (index != -1)
-				{
+				if (index != -1) {
 					index = line.indexOf(":");
-					if (index != -1)
-					{
+					if (index != -1) {
 						/**
 						 * 取出mac地址并去除2边空格
 						 */
@@ -182,19 +150,14 @@ public class GetMacAddressUtil
 					break;
 				}
 			}
-		} catch (IOException e)
-		{
+		} catch (IOException e) {
 			e.printStackTrace();
-		} finally
-		{
-			try
-			{
-				if (bufferedReader != null)
-				{
+		} finally {
+			try {
+				if (bufferedReader != null) {
 					bufferedReader.close();
 				}
-			} catch (IOException e1)
-			{
+			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
 			bufferedReader = null;
@@ -204,12 +167,13 @@ public class GetMacAddressUtil
 		return mac;
 	}
 
-	
-	//WindowsCmd ="cmd.exe /c echo %NUMBER_OF_PROCESSORS%";//windows的特殊
-	//SolarisCmd = {"/bin/sh", "-c", "/usr/sbin/psrinfo | wc -l"};  
-	//AIXCmd = {"/bin/sh", "-c", "/usr/sbin/lsdev -Cc processor | wc -l"};  
-	//HPUXCmd = {"/bin/sh", "-c", "echo \"map\" | /usr/sbin/cstm | grep CPU | wc -l "}; 
-	//LinuxCmd = {"/bin/sh", "-c", "cat /proc/cpuinfo | grep ^process | wc -l"}; 
+	// WindowsCmd ="cmd.exe /c echo %NUMBER_OF_PROCESSORS%";//windows的特殊
+	// SolarisCmd = {"/bin/sh", "-c", "/usr/sbin/psrinfo | wc -l"};
+	// AIXCmd = {"/bin/sh", "-c", "/usr/sbin/lsdev -Cc processor | wc -l"};
+	// HPUXCmd = {"/bin/sh", "-c", "echo \"map\" | /usr/sbin/cstm | grep CPU |
+	// wc -l "};
+	// LinuxCmd = {"/bin/sh", "-c", "cat /proc/cpuinfo | grep ^process | wc
+	// -l"};
 
 	/**
 	 * 测试用的main方法.
@@ -217,20 +181,16 @@ public class GetMacAddressUtil
 	 * @param argc
 	 *            运行参数.
 	 */
-	public static void main(String[] argc )
-	{
+	public static void main(String[] argc) {
 		String os = getOSName();
 		System.out.println(os);
-		if (os.startsWith("windows"))
-		{
+		if (os.startsWith("windows")) {
 			String mac = getWindowsMACAddress();
 			System.out.println("本地是windows:" + mac);
-		} else if (os.startsWith("linux"))
-		{
+		} else if (os.startsWith("linux")) {
 			String mac = getLinuxMACAddress();
 			System.out.println("本地是Linux系统,MAC地址是:" + mac);
-		} else
-		{
+		} else {
 			String mac = getUnixMACAddress();
 			System.out.println("本地是Unix系统 MAC地址是:" + mac);
 		}

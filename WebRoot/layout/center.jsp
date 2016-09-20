@@ -175,21 +175,23 @@
 	
 </script>
 <div id="centerTabs">
-	<div iconCls="icon-home" title="首页" border="false" style="overflow: hidden;">
-		<iframe src="layout/portal.jsp" frameborder="0" style="border:0;width:100%;height:99.4%;"></iframe>
+	<div iconCls="icon-home" title="首页" border="false"
+		style="overflow: hidden;">
+		<iframe src="layout/portal.jsp" frameborder="0"
+			style="border: 0; width: 100%; height: 99.4%;"></iframe>
 	</div>
 </div>
-<div id="tabsMenu" style="width: 120px;display:none;">
+<div id="tabsMenu" style="width: 120px; display: none;">
 	<div type="refresh">刷新</div>
 	<div class="menu-sep"></div>
 	<div type="close">关闭</div>
 	<div type="closeOther">关闭其他</div>
 	<div type="closeAll">关闭所有</div>
 </div>
-<div id="theme" class="easyui-menu" style="width:120px;display: none">  
-		    <div id="default" data-options="iconCls:'icon-save'">default</div>  
-		    <div id="black">black</div> 
-		    <div id="bootstrap" data-options="iconCls:'icon-save'">bootstrap</div>  
-		    <div id="gray" data-options="iconCls:'icon-save'">gray</div>  
-		    <div id="metro" data-options="iconCls:'icon-save'">metro</div>  
+<div id="theme" class="easyui-menu" style="width: 120px; display: none">
+	<div id="default" data-options="iconCls:'icon-save'">default</div>
+	<div id="black">black</div>
+	<div id="bootstrap" data-options="iconCls:'icon-save'">bootstrap</div>
+	<div id="gray" data-options="iconCls:'icon-save'">gray</div>
+	<div id="metro" data-options="iconCls:'icon-save'">metro</div>
 </div>

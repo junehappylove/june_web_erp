@@ -1,14 +1,14 @@
 package com.erp.viewModel;
 
 public class Json {
-	private String title="提示";
+	private String title = "提示";
 	private String message;
-	private boolean status=false;
-	
+	private boolean status = false;
+
 	public String getMessage() {
 		return message;
 	}
-	
+
 	public String getTitle() {
 		return title;
 	}
@@ -28,5 +28,5 @@ public class Json {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	
+
 }

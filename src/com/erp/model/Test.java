@@ -2,6 +2,7 @@ package com.erp.model;
 
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,8 +24,7 @@ import org.hibernate.annotations.DynamicUpdate;
 @Table(name = "TEST", catalog = "ERP")
 @DynamicUpdate(true)
 @DynamicInsert(true)
-public class Test implements java.io.Serializable
-{
+public class Test implements java.io.Serializable {
 	private static final long serialVersionUID = -6488196741315215104L;
 	private Integer id;
 	private Test test;
@@ -35,13 +35,11 @@ public class Test implements java.io.Serializable
 	// Constructors
 
 	/** default constructor */
-	public Test()
-	{
+	public Test() {
 	}
 
 	/** full constructor */
-	public Test(Test test, String username, String userpwd, Set<Test> tests)
-	{
+	public Test(Test test, String username, String userpwd, Set<Test> tests) {
 		this.test = test;
 		this.username = username;
 		this.userpwd = userpwd;
@@ -52,58 +50,48 @@ public class Test implements java.io.Serializable
 	@Id
 	@GeneratedValue
 	@Column(name = "ID", unique = true, nullable = false)
-	public Integer getId()
-	{
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(Integer id )
-	{
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "PID")
-	public Test getTest()
-	{
+	public Test getTest() {
 		return this.test;
 	}
 
-	public void setTest(Test test )
-	{
+	public void setTest(Test test) {
 		this.test = test;
 	}
 
 	@Column(name = "USERNAME", length = 100)
-	public String getUsername()
-	{
+	public String getUsername() {
 		return this.username;
 	}
 
-	public void setUsername(String username )
-	{
+	public void setUsername(String username) {
 		this.username = username;
 	}
 
 	@Column(name = "USERPWD", length = 100)
-	public String getUserpwd()
-	{
+	public String getUserpwd() {
 		return this.userpwd;
 	}
 
-	public void setUserpwd(String userpwd )
-	{
+	public void setUserpwd(String userpwd) {
 		this.userpwd = userpwd;
 	}
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "test")
-	public Set<Test> getTests()
-	{
+	public Set<Test> getTests() {
 		return this.tests;
 	}
 
-	public void setTests(Set<Test> tests )
-	{
+	public void setTests(Set<Test> tests) {
 		this.tests = tests;
 	}
 

@@ -3,6 +3,7 @@ package com.erp.model;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,8 +25,7 @@ import org.hibernate.annotations.DynamicUpdate;
 @Table(name = "USERS", catalog = "ERP")
 @DynamicUpdate(true)
 @DynamicInsert(true)
-public class Users implements java.io.Serializable
-{
+public class Users implements java.io.Serializable {
 	private static final long serialVersionUID = 3091722681204768199L;
 	private Integer userId;
 	private String myid;
@@ -60,18 +60,15 @@ public class Users implements java.io.Serializable
 	// Constructors
 
 	/** default constructor */
-	public Users()
-	{
+	public Users() {
 	}
 
 	/** full constructor */
-	public Users(String myid, String account, String name, Integer organizeId, String organizeName,
-			Integer dutyId, Integer titleId, String password, String email, String lang,
-			String theme, Date firstVisit, Date previousVisit, Date lastVisits, Integer loginCount,
-			Integer isemployee, String status, String ip, String description, Integer questionId,
-			String answer, Integer isonline, Date created, Date lastmod, Integer creater,
-			Integer modifyer, String tel, Set<UserRole> userRoles)
-	{
+	public Users(String myid, String account, String name, Integer organizeId, String organizeName, Integer dutyId,
+			Integer titleId, String password, String email, String lang, String theme, Date firstVisit,
+			Date previousVisit, Date lastVisits, Integer loginCount, Integer isemployee, String status, String ip,
+			String description, Integer questionId, String answer, Integer isonline, Date created, Date lastmod,
+			Integer creater, Integer modifyer, String tel, Set<UserRole> userRoles) {
 		this.myid = myid;
 		this.account = account;
 		this.name = name;
@@ -106,326 +103,268 @@ public class Users implements java.io.Serializable
 	@Id
 	@GeneratedValue
 	@Column(name = "USER_ID", unique = true, nullable = false)
-	public Integer getUserId()
-	{
+	public Integer getUserId() {
 		return this.userId;
 	}
 
-	public void setUserId(Integer userId )
-	{
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 
 	@Column(name = "MYID", length = 50)
-	public String getMyid()
-	{
+	public String getMyid() {
 		return this.myid;
 	}
 
-	public void setMyid(String myid )
-	{
+	public void setMyid(String myid) {
 		this.myid = myid;
 	}
 
 	@Column(name = "ACCOUNT", length = 50)
-	public String getAccount()
-	{
+	public String getAccount() {
 		return this.account;
 	}
 
-	public void setAccount(String account )
-	{
+	public void setAccount(String account) {
 		this.account = account;
 	}
 
 	@Column(name = "NAME", length = 50)
-	public String getName()
-	{
+	public String getName() {
 		return this.name;
 	}
 
-	public void setName(String name )
-	{
+	public void setName(String name) {
 		this.name = name;
 	}
 
 	@Column(name = "ORGANIZE_ID")
-	public Integer getOrganizeId()
-	{
+	public Integer getOrganizeId() {
 		return this.organizeId;
 	}
 
-	public void setOrganizeId(Integer organizeId )
-	{
+	public void setOrganizeId(Integer organizeId) {
 		this.organizeId = organizeId;
 	}
 
 	@Column(name = "ORGANIZE_NAME")
-	public String getOrganizeName()
-	{
+	public String getOrganizeName() {
 		return this.organizeName;
 	}
 
-	public void setOrganizeName(String organizeName )
-	{
+	public void setOrganizeName(String organizeName) {
 		this.organizeName = organizeName;
 	}
 
 	@Column(name = "DUTY_ID")
-	public Integer getDutyId()
-	{
+	public Integer getDutyId() {
 		return this.dutyId;
 	}
 
-	public void setDutyId(Integer dutyId )
-	{
+	public void setDutyId(Integer dutyId) {
 		this.dutyId = dutyId;
 	}
 
 	@Column(name = "TITLE_ID")
-	public Integer getTitleId()
-	{
+	public Integer getTitleId() {
 		return this.titleId;
 	}
 
-	public void setTitleId(Integer titleId )
-	{
+	public void setTitleId(Integer titleId) {
 		this.titleId = titleId;
 	}
 
 	@Column(name = "PASSWORD", length = 128)
-	public String getPassword()
-	{
+	public String getPassword() {
 		return this.password;
 	}
 
-	public void setPassword(String password )
-	{
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
 	@Column(name = "EMAIL", length = 200)
-	public String getEmail()
-	{
+	public String getEmail() {
 		return this.email;
 	}
 
-	public void setEmail(String email )
-	{
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
 	@Column(name = "LANG", length = 20)
-	public String getLang()
-	{
+	public String getLang() {
 		return this.lang;
 	}
 
-	public void setLang(String lang )
-	{
+	public void setLang(String lang) {
 		this.lang = lang;
 	}
 
 	@Column(name = "THEME", length = 20)
-	public String getTheme()
-	{
+	public String getTheme() {
 		return this.theme;
 	}
 
-	public void setTheme(String theme )
-	{
+	public void setTheme(String theme) {
 		this.theme = theme;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "FIRST_VISIT", length = 10)
-	public Date getFirstVisit()
-	{
+	public Date getFirstVisit() {
 		return this.firstVisit;
 	}
 
-	public void setFirstVisit(Date firstVisit )
-	{
+	public void setFirstVisit(Date firstVisit) {
 		this.firstVisit = firstVisit;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "PREVIOUS_VISIT", length = 10)
-	public Date getPreviousVisit()
-	{
+	public Date getPreviousVisit() {
 		return this.previousVisit;
 	}
 
-	public void setPreviousVisit(Date previousVisit )
-	{
+	public void setPreviousVisit(Date previousVisit) {
 		this.previousVisit = previousVisit;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "LAST_VISITS", length = 10)
-	public Date getLastVisits()
-	{
+	public Date getLastVisits() {
 		return this.lastVisits;
 	}
 
-	public void setLastVisits(Date lastVisits )
-	{
+	public void setLastVisits(Date lastVisits) {
 		this.lastVisits = lastVisits;
 	}
 
 	@Column(name = "LOGIN_COUNT")
-	public Integer getLoginCount()
-	{
+	public Integer getLoginCount() {
 		return this.loginCount;
 	}
 
-	public void setLoginCount(Integer loginCount )
-	{
+	public void setLoginCount(Integer loginCount) {
 		this.loginCount = loginCount;
 	}
 
 	@Column(name = "ISEMPLOYEE")
-	public Integer getIsemployee()
-	{
+	public Integer getIsemployee() {
 		return this.isemployee;
 	}
 
-	public void setIsemployee(Integer isemployee )
-	{
+	public void setIsemployee(Integer isemployee) {
 		this.isemployee = isemployee;
 	}
 
 	@Column(name = "STATUS", length = 1)
-	public String getStatus()
-	{
+	public String getStatus() {
 		return this.status;
 	}
 
-	public void setStatus(String status )
-	{
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
 	@Column(name = "IP", length = 20)
-	public String getIp()
-	{
+	public String getIp() {
 		return this.ip;
 	}
 
-	public void setIp(String ip )
-	{
+	public void setIp(String ip) {
 		this.ip = ip;
 	}
 
 	@Column(name = "DESCRIPTION", length = 2000)
-	public String getDescription()
-	{
+	public String getDescription() {
 		return this.description;
 	}
 
-	public void setDescription(String description )
-	{
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
 	@Column(name = "QUESTION_ID")
-	public Integer getQuestionId()
-	{
+	public Integer getQuestionId() {
 		return this.questionId;
 	}
 
-	public void setQuestionId(Integer questionId )
-	{
+	public void setQuestionId(Integer questionId) {
 		this.questionId = questionId;
 	}
 
 	@Column(name = "ANSWER", length = 100)
-	public String getAnswer()
-	{
+	public String getAnswer() {
 		return this.answer;
 	}
 
-	public void setAnswer(String answer )
-	{
+	public void setAnswer(String answer) {
 		this.answer = answer;
 	}
 
 	@Column(name = "ISONLINE")
-	public Integer getIsonline()
-	{
+	public Integer getIsonline() {
 		return this.isonline;
 	}
 
-	public void setIsonline(Integer isonline )
-	{
+	public void setIsonline(Integer isonline) {
 		this.isonline = isonline;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "CREATED", length = 10)
-	public Date getCreated()
-	{
+	public Date getCreated() {
 		return this.created;
 	}
 
-	public void setCreated(Date created )
-	{
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "LASTMOD", length = 10)
-	public Date getLastmod()
-	{
+	public Date getLastmod() {
 		return this.lastmod;
 	}
 
-	public void setLastmod(Date lastmod )
-	{
+	public void setLastmod(Date lastmod) {
 		this.lastmod = lastmod;
 	}
 
 	@Column(name = "CREATER")
-	public Integer getCreater()
-	{
+	public Integer getCreater() {
 		return this.creater;
 	}
 
-	public void setCreater(Integer creater )
-	{
+	public void setCreater(Integer creater) {
 		this.creater = creater;
 	}
 
 	@Column(name = "MODIFYER")
-	public Integer getModifyer()
-	{
+	public Integer getModifyer() {
 		return this.modifyer;
 	}
 
-	public void setModifyer(Integer modifyer )
-	{
+	public void setModifyer(Integer modifyer) {
 		this.modifyer = modifyer;
 	}
 
 	@Column(name = "TEL", length = 30)
-	public String getTel()
-	{
+	public String getTel() {
 		return this.tel;
 	}
 
-	public void setTel(String tel )
-	{
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "users")
-	public Set<UserRole> getUserRoles()
-	{
+	public Set<UserRole> getUserRoles() {
 		return this.userRoles;
 	}
 
-	public void setUserRoles(Set<UserRole> userRoles )
-	{
+	public void setUserRoles(Set<UserRole> userRoles) {
 		this.userRoles = userRoles;
 	}
 

@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <script type="text/javascript">
 	var $dg;
 	var $tree;
@@ -315,214 +315,271 @@
 	}
 </script>
 <style>
-	.easyui-textbox{
-		height: 18px;
-		width: 170px;
-		line-height: 16px;
-	    /*border-radius: 3px 3px 3px 3px;*/
-	    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-	    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
-	}
-	
-	textarea:focus, input[type="text"]:focus{
-	    border-color: rgba(82, 168, 236, 0.8);
-	    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
-	    outline: 0 none;
-		}
-		
-	
-	fieldset {
-	    border: 0 none;
-	    margin: 0;
-	    padding: 0;
-	}
-	legend {
-	    -moz-border-bottom-colors: none;
-	    -moz-border-left-colors: none;
-	    -moz-border-right-colors: none;
-	    -moz-border-top-colors: none;
-	    border-color: #E5E5E5;
-	    border-image: none;
-	    border-style: none none solid;
-	    border-width: 0 0 1px;
-	    color: #999999;
-	    line-height: 20px;
-	    display: block;
-	    margin-bottom: 10px;
-	    padding: 0;
-	    width: 100%;
-	}
-	input, textarea {
-	    font-weight: normal;
-	}
-	.table {
-	    background-color: transparent;
-	    border-collapse: collapse;
-	    border-spacing: 0;
-	    max-width: 100%;
-	}
-	
-	.table{
-		text-align:left;
-		padding: 6px 10px 6px 10px;
-	}
-	.table th{
-		text-align:left;
-		padding: 6px 10px 6px 10px;
-	}
-	.table td{
-		text-align:left;
-		padding: 6px 10px 6px 10px;
-	}
+.easyui-textbox {
+	height: 18px;
+	width: 170px;
+	line-height: 16px;
+	/*border-radius: 3px 3px 3px 3px;*/
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+	transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+
+textarea:focus, input[type="text"]:focus {
+	border-color: rgba(82, 168, 236, 0.8);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px
+		rgba(82, 168, 236, 0.6);
+	outline: 0 none;
+}
+
+fieldset {
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+}
+
+legend {
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	border-color: #E5E5E5;
+	border-image: none;
+	border-style: none none solid;
+	border-width: 0 0 1px;
+	color: #999999;
+	line-height: 20px;
+	display: block;
+	margin-bottom: 10px;
+	padding: 0;
+	width: 100%;
+}
+
+input, textarea {
+	font-weight: normal;
+}
+
+.table {
+	background-color: transparent;
+	border-collapse: collapse;
+	border-spacing: 0;
+	max-width: 100%;
+}
+
+.table {
+	text-align: left;
+	padding: 6px 10px 6px 10px;
+}
+
+.table th {
+	text-align: left;
+	padding: 6px 10px 6px 10px;
+}
+
+.table td {
+	text-align: left;
+	padding: 6px 10px 6px 10px;
+}
 </style>
 <div class="easyui-layout" data-options="fit:true,border:false">
 	<div data-options="region:'center',border:false" title="">
-	<input name="tempId" id="tempId"  type="hidden" value="<%=request.getParameter("tempId")==null?"":request.getParameter("tempId")%>"/>
+		<input name="tempId" id="tempId" type="hidden"
+			value="<%=request.getParameter("tempId")==null?"":request.getParameter("tempId")%>" />
 		<form id="form" method="post">
 			<div id="tt">
-				<div title="基本资料" data-options="iconCls:'icon-cstbase'" style="padding:10px">
-						<fieldset>
-							<legend>基本资料编辑</legend>
-							<input name="customerId" id="customerId"  type="hidden"/>
-							<input name="created" id="created"  type="hidden"/>
-							<input name="creater" id="creater"  type="hidden"/>
-							<input name="status" id="status"  type="hidden"/>
-							<input name="inserted" id="inserted"  type="hidden"/>
-							<input name="updated" id="updated"  type="hidden"/>
-							<input name="deleted" id="deleted"  type="hidden"/>
-							 <table class="table">
-								 <tr>
-								    <th>客户名称</th>
-									<td><input name="name" id="name" placeholder="请输入客户名称" class="easyui-textbox easyui-validatebox" type="text" data-options="required:true"/></td>
-									<th>客户编码</th>
-									<td><input name="myid" id="myid" type="text"  class="easyui-textbox easyui-validatebox" data-options="required:true"/></td>
-									<th>客户类型</th>
-									<td><input name="classId" id="classId" type="text" class="easyui-textbox easyui-validatebox" /><input name="className" id="className" type="hidden" /></td>
-								 </tr>
-								 <tr>
-									<th>客户级别</th>
-									<td><input id="levelId" name="levelId" type="text" class="easyui-textbox easyui-validatebox" /><input id="levelName" name="levelName" type="hidden"/></td>
-								    <th>销售代表</th>
-									<td><input name="saleId" id="saleId" type="text" class="easyui-textbox easyui-validatebox" /><input name="saleName" id="saleName" type="hidden"/></td>
-								    <th>公司法人</th>
-									<td><input id="corporation" name="corporation" type="text" class="easyui-textbox easyui-validatebox" /></td>
-								 </tr>
-								  <tr>
-									<th>城市</th>
-									<td><input id="cityId" name="cityId" type="text" class="easyui-textbox easyui-validatebox"/><input id="cityName" name="cityName" type="hidden"/><img src="extend/area.png" style="margin-left:2px;margin-bottom: -5px;cursor: pointer;" onclick="addAreaOpenDlg();"/></td>
-									<th>公司电话</th>
-									<td><input id="tel" name="tel" type="text" class="easyui-textbox easyui-validatebox"/></td>
-									 <th>公司传真</th>
-									<td><input id="fax" name="fax" type="text" class="easyui-textbox easyui-validatebox"/></td>
-								 </tr>
-								 <tr>
-									<th>地址</th>
-									<td colspan="5"><textarea class="easyui-textbox" id="address" name="address"  style="width: 710px;height: 80px;"></textarea></td>
-								 </tr>
-								 <tr>
-									<th>备注</th>
-									<td colspan="5"><textarea class="easyui-textbox" id="description" name="description"  style="width: 710px;height: 80px;"></textarea></td>
-								</tr>
-							   </table>
-						</fieldset>
-				</div>
-				<div title="营业资料" data-options="iconCls:'icon-help'" style="padding:10px">
-						<fieldset>
-							<legend>营业资料编辑</legend>
-						 <table class="table">
-							   <tr>
-								    <th>公司网站</th>
-									<td><input name="url" id="url" class="easyui-textbox easyui-validatebox" type="text"/></td>
-									<th>公司邮箱</th>
-									<td><input name="email" id="email" type="text"  class="easyui-textbox easyui-validatebox" /></td>
-									<th>公司性质</th>
-									<td><input name="natureId" id="natureId" type="text" class="easyui-textbox easyui-validatebox"/><input name="natureName" id="natureName" type="hidden"/></td>
-								 </tr>
-								 <tr>
-									<th>行业名称</th>
-									<td><input id="industryId" name="industryId" type="text" class="easyui-textbox easyui-validatebox"/><input id="industryName" name="industryName" type="hidden" /></td>
-								    <th>主营业务</th>
-									<td><input name="mainBusiness" id="mainBusiness" type="text" class="easyui-textbox easyui-validatebox" /></td>
-									<th>公司规模</th>
-									<td><input id="sizeId" name="sizeId" type="text" class="easyui-textbox easyui-validatebox" /><input id="sizeName" name="sizeName" type="hidden"/></td>
-								 </tr>
-								 <tr>
-								    <th>开业年份</th>
-									<td><input id="setupDate" name="setupDate" type="text" class="easyui-textbox easyui-datebox"/></td>
-									<th>注册资金</th>
-									<td><input id="capital" name="capital" type="text" class="easyui-textbox easyui-validatebox" /></td>
-								    <th>员工人数</th>
-									<td><input id="empCount" name="empCount" type="text" class="easyui-textbox easyui-validatebox"/></td>
-								 </tr>
-								 <tr>
-								    <th>营业总额</th>
-									<td><input id="totalSales" name="totalSales" type="text" class="easyui-textbox easyui-validatebox"/></td>
-									<th>交易状态</th>
-									<td><select id="customerStatus" class="easyui-combobox" name="customerStatus" style="width:171px;">
-											<option value="T">交易中</option>
-											<option value="S">禁用</option>
-										</select>
-									</td>
-								 </tr>
+				<div title="基本资料" data-options="iconCls:'icon-cstbase'"
+					style="padding: 10px">
+					<fieldset>
+						<legend>基本资料编辑</legend>
+						<input name="customerId" id="customerId" type="hidden" /> <input
+							name="created" id="created" type="hidden" /> <input
+							name="creater" id="creater" type="hidden" /> <input name="status"
+							id="status" type="hidden" /> <input name="inserted" id="inserted"
+							type="hidden" /> <input name="updated" id="updated" type="hidden" />
+						<input name="deleted" id="deleted" type="hidden" />
+						<table class="table">
+							<tr>
+								<th>客户名称</th>
+								<td><input name="name" id="name" placeholder="请输入客户名称"
+									class="easyui-textbox easyui-validatebox" type="text"
+									data-options="required:true" /></td>
+								<th>客户编码</th>
+								<td><input name="myid" id="myid" type="text"
+									class="easyui-textbox easyui-validatebox"
+									data-options="required:true" /></td>
+								<th>客户类型</th>
+								<td><input name="classId" id="classId" type="text"
+									class="easyui-textbox easyui-validatebox" /><input
+									name="className" id="className" type="hidden" /></td>
+							</tr>
+							<tr>
+								<th>客户级别</th>
+								<td><input id="levelId" name="levelId" type="text"
+									class="easyui-textbox easyui-validatebox" /><input
+									id="levelName" name="levelName" type="hidden" /></td>
+								<th>销售代表</th>
+								<td><input name="saleId" id="saleId" type="text"
+									class="easyui-textbox easyui-validatebox" /><input
+									name="saleName" id="saleName" type="hidden" /></td>
+								<th>公司法人</th>
+								<td><input id="corporation" name="corporation" type="text"
+									class="easyui-textbox easyui-validatebox" /></td>
+							</tr>
+							<tr>
+								<th>城市</th>
+								<td><input id="cityId" name="cityId" type="text"
+									class="easyui-textbox easyui-validatebox" /><input
+									id="cityName" name="cityName" type="hidden" /><img
+									src="extend/area.png"
+									style="margin-left: 2px; margin-bottom: -5px; cursor: pointer;"
+									onclick="addAreaOpenDlg();" /></td>
+								<th>公司电话</th>
+								<td><input id="tel" name="tel" type="text"
+									class="easyui-textbox easyui-validatebox" /></td>
+								<th>公司传真</th>
+								<td><input id="fax" name="fax" type="text"
+									class="easyui-textbox easyui-validatebox" /></td>
+							</tr>
+							<tr>
+								<th>地址</th>
+								<td colspan="5"><textarea class="easyui-textbox"
+										id="address" name="address"
+										style="width: 710px; height: 80px;"></textarea></td>
+							</tr>
+							<tr>
+								<th>备注</th>
+								<td colspan="5"><textarea class="easyui-textbox"
+										id="description" name="description"
+										style="width: 710px; height: 80px;"></textarea></td>
+							</tr>
 						</table>
-						</fieldset>
+					</fieldset>
 				</div>
-				<div title="账款资料" data-options="iconCls:'icon-help'" style="padding:10px">
-						<fieldset>
-							<legend>账款资料编辑</legend>
-						 <table class="table">
-							 <tr>
-								    <th>账款币别</th>
-									<td><input name="currencyId" id="currencyId" class="easyui-textbox easyui-validatebox" type="text"/><input name="currencyName" id="currencyName" type="hidden"/></td>
-									<th>信用等级</th>
-									<td><input name="creditId" id="creditId" type="text"  class="easyui-textbox easyui-validatebox" /><input name="creditName" id="creditName" type="hidden"/></td>
-									<th>开户银行</th>
-									<td><input name="bank" id="bank" type="text" class="easyui-textbox easyui-validatebox"/></td>
-								 </tr>
-								 <tr>
-									<th>银行账号</th>
-									<td><input id="account" name="account" type="text" class="easyui-textbox easyui-validatebox"/></td>
-								    <th>税号</th>
-									<td><input name="taxno" id="taxno" type="text" class="easyui-textbox easyui-validatebox"/></td>
-									<th>扣税类别</th>
-									<td><select id="deductionTax" class="easyui-combobox" name="deductionTax" style="width:171px;">
-											<option value="Y">含税</option>
-											<option value="N">未税</option>
-										</select>
-									</td>
-								 </tr>
-								 <tr>
-								    <th>应用税率</th>
-									<td><input id="tax" name="tax" type="text" class="easyui-textbox easyui-validatebox"/></td>
-									<th>立账方式</th>
-									<td><input id="setupAccount" name="setupAccount" type="text" class="easyui-textbox easyui-validatebox"/></td>
-								 </tr>
+				<div title="营业资料" data-options="iconCls:'icon-help'"
+					style="padding: 10px">
+					<fieldset>
+						<legend>营业资料编辑</legend>
+						<table class="table">
+							<tr>
+								<th>公司网站</th>
+								<td><input name="url" id="url"
+									class="easyui-textbox easyui-validatebox" type="text" /></td>
+								<th>公司邮箱</th>
+								<td><input name="email" id="email" type="text"
+									class="easyui-textbox easyui-validatebox" /></td>
+								<th>公司性质</th>
+								<td><input name="natureId" id="natureId" type="text"
+									class="easyui-textbox easyui-validatebox" /><input
+									name="natureName" id="natureName" type="hidden" /></td>
+							</tr>
+							<tr>
+								<th>行业名称</th>
+								<td><input id="industryId" name="industryId" type="text"
+									class="easyui-textbox easyui-validatebox" /><input
+									id="industryName" name="industryName" type="hidden" /></td>
+								<th>主营业务</th>
+								<td><input name="mainBusiness" id="mainBusiness"
+									type="text" class="easyui-textbox easyui-validatebox" /></td>
+								<th>公司规模</th>
+								<td><input id="sizeId" name="sizeId" type="text"
+									class="easyui-textbox easyui-validatebox" /><input
+									id="sizeName" name="sizeName" type="hidden" /></td>
+							</tr>
+							<tr>
+								<th>开业年份</th>
+								<td><input id="setupDate" name="setupDate" type="text"
+									class="easyui-textbox easyui-datebox" /></td>
+								<th>注册资金</th>
+								<td><input id="capital" name="capital" type="text"
+									class="easyui-textbox easyui-validatebox" /></td>
+								<th>员工人数</th>
+								<td><input id="empCount" name="empCount" type="text"
+									class="easyui-textbox easyui-validatebox" /></td>
+							</tr>
+							<tr>
+								<th>营业总额</th>
+								<td><input id="totalSales" name="totalSales" type="text"
+									class="easyui-textbox easyui-validatebox" /></td>
+								<th>交易状态</th>
+								<td><select id="customerStatus" class="easyui-combobox"
+									name="customerStatus" style="width: 171px;">
+										<option value="T">交易中</option>
+										<option value="S">禁用</option>
+								</select></td>
+							</tr>
 						</table>
-						</fieldset>
+					</fieldset>
+				</div>
+				<div title="账款资料" data-options="iconCls:'icon-help'"
+					style="padding: 10px">
+					<fieldset>
+						<legend>账款资料编辑</legend>
+						<table class="table">
+							<tr>
+								<th>账款币别</th>
+								<td><input name="currencyId" id="currencyId"
+									class="easyui-textbox easyui-validatebox" type="text" /><input
+									name="currencyName" id="currencyName" type="hidden" /></td>
+								<th>信用等级</th>
+								<td><input name="creditId" id="creditId" type="text"
+									class="easyui-textbox easyui-validatebox" /><input
+									name="creditName" id="creditName" type="hidden" /></td>
+								<th>开户银行</th>
+								<td><input name="bank" id="bank" type="text"
+									class="easyui-textbox easyui-validatebox" /></td>
+							</tr>
+							<tr>
+								<th>银行账号</th>
+								<td><input id="account" name="account" type="text"
+									class="easyui-textbox easyui-validatebox" /></td>
+								<th>税号</th>
+								<td><input name="taxno" id="taxno" type="text"
+									class="easyui-textbox easyui-validatebox" /></td>
+								<th>扣税类别</th>
+								<td><select id="deductionTax" class="easyui-combobox"
+									name="deductionTax" style="width: 171px;">
+										<option value="Y">含税</option>
+										<option value="N">未税</option>
+								</select></td>
+							</tr>
+							<tr>
+								<th>应用税率</th>
+								<td><input id="tax" name="tax" type="text"
+									class="easyui-textbox easyui-validatebox" /></td>
+								<th>立账方式</th>
+								<td><input id="setupAccount" name="setupAccount"
+									type="text" class="easyui-textbox easyui-validatebox" /></td>
+							</tr>
+						</table>
+					</fieldset>
 				</div>
 				<div title="客户联系人" data-options="iconCls:'icon-help'">
-							<table id="dg"></table>
-							<div id="tb" style="padding:2px 0">
-								<table cellpadding="0" cellspacing="0">
-									<tr>
-										<td style="padding-left:2px">
-											<shiro:hasPermission name="cstConEdit">
-												<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="addRows();">添加</a>
-												<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editRows();">编辑</a>
-												<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-end" plain="true" onclick="endEdit();">结束编辑</a>
-												<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="removeRows();">删除</a>
-												<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="saveRows();">保存</a>
-											</shiro:hasPermission>
-										</td>
-									</tr>
-								</table>
-							</div>
+					<table id="dg"></table>
+					<div id="tb" style="padding: 2px 0">
+						<table cellpadding="0" cellspacing="0">
+							<tr>
+								<td style="padding-left: 2px"><shiro:hasPermission
+										name="cstConEdit">
+										<a href="javascript:void(0);" class="easyui-linkbutton"
+											iconCls="icon-add" plain="true" onclick="addRows();">添加</a>
+										<a href="javascript:void(0);" class="easyui-linkbutton"
+											iconCls="icon-edit" plain="true" onclick="editRows();">编辑</a>
+										<a href="javascript:void(0);" class="easyui-linkbutton"
+											iconCls="icon-end" plain="true" onclick="endEdit();">结束编辑</a>
+										<a href="javascript:void(0);" class="easyui-linkbutton"
+											iconCls="icon-remove" plain="true" onclick="removeRows();">删除</a>
+										<a href="javascript:void(0);" class="easyui-linkbutton"
+											iconCls="icon-save" plain="true" onclick="saveRows();">保存</a>
+									</shiro:hasPermission></td>
+							</tr>
+						</table>
+					</div>
 				</div>
-							
-				<div title="交易方式" data-options="iconCls:'icon-help'" style="padding:10px">
+
+				<div title="交易方式" data-options="iconCls:'icon-help'"
+					style="padding: 10px">
 					<fieldset>
-							<legend>交易方式编辑</legend>
-							<!--   <table class="table">
+						<legend>交易方式编辑</legend>
+						<!--   <table class="table">
 							 <tr>
 								    <th></th>
 									<td><input name="currencyName1" id="currencyName1"  type="radio"/></td>
@@ -572,9 +629,9 @@
 									<td></td>
 								 </tr>
 						</table>-->
-						</fieldset>
+					</fieldset>
 				</div>
-		  </div>
+			</div>
 		</form>
 	</div>
 </div>

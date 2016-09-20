@@ -3,6 +3,7 @@ package com.erp.model;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,8 +25,7 @@ import org.hibernate.annotations.DynamicUpdate;
 @Table(name = "PERMISSION", catalog = "ERP")
 @DynamicUpdate(true)
 @DynamicInsert(true)
-public class Permission implements java.io.Serializable
-{
+public class Permission implements java.io.Serializable {
 	private static final long serialVersionUID = 1136795483472903508L;
 	private Integer permissionId;
 	private Integer pid;
@@ -49,23 +49,19 @@ public class Permission implements java.io.Serializable
 	// Constructors
 
 	/** default constructor */
-	public Permission()
-	{
+	public Permission() {
 	}
 
 	/** minimal constructor */
-	public Permission(String status, Date created)
-	{
+	public Permission(String status, Date created) {
 		this.status = status;
 		this.created = created;
 	}
 
 	/** full constructor */
-	public Permission(Integer pid, String name, String pname, Integer sort, String myid,
-			String type, String isused, String url, String iconCls, String status,
-			String description, Date created, Date lastmod, Integer creater, Integer modifyer,
-			Set<RolePermission> rolePermissions)
-	{
+	public Permission(Integer pid, String name, String pname, Integer sort, String myid, String type, String isused,
+			String url, String iconCls, String status, String description, Date created, Date lastmod, Integer creater,
+			Integer modifyer, Set<RolePermission> rolePermissions) {
 		this.pid = pid;
 		this.name = name;
 		this.pname = pname;
@@ -88,201 +84,166 @@ public class Permission implements java.io.Serializable
 	@Id
 	@GeneratedValue
 	@Column(name = "PERMISSION_ID", unique = true, nullable = false)
-	public Integer getPermissionId()
-	{
+	public Integer getPermissionId() {
 		return this.permissionId;
 	}
 
-	public void setPermissionId(Integer permissionId )
-	{
+	public void setPermissionId(Integer permissionId) {
 		this.permissionId = permissionId;
 	}
 
 	@Column(name = "PID")
-	public Integer getPid()
-	{
+	public Integer getPid() {
 		return this.pid;
 	}
 
-	public void setPid(Integer pid )
-	{
+	public void setPid(Integer pid) {
 		this.pid = pid;
 	}
 
 	@Column(name = "NAME", length = 100)
-	public String getName()
-	{
+	public String getName() {
 		return this.name;
 	}
 
-	public void setName(String name )
-	{
+	public void setName(String name) {
 		this.name = name;
 	}
 
 	@Column(name = "PNAME", length = 100)
-	public String getPname()
-	{
+	public String getPname() {
 		return this.pname;
 	}
 
-	public void setPname(String pname )
-	{
+	public void setPname(String pname) {
 		this.pname = pname;
 	}
 
 	@Column(name = "SORT")
-	public Integer getSort()
-	{
+	public Integer getSort() {
 		return this.sort;
 	}
 
-	public void setSort(Integer sort )
-	{
+	public void setSort(Integer sort) {
 		this.sort = sort;
 	}
 
 	@Column(name = "MYID", length = 55)
-	public String getMyid()
-	{
+	public String getMyid() {
 		return this.myid;
 	}
 
-	public void setMyid(String myid )
-	{
+	public void setMyid(String myid) {
 		this.myid = myid;
 	}
 
 	@Column(name = "TYPE", length = 1)
-	public String getType()
-	{
+	public String getType() {
 		return this.type;
 	}
 
-	public void setType(String type )
-	{
+	public void setType(String type) {
 		this.type = type;
 	}
 
 	@Column(name = "ISUSED", length = 1)
-	public String getIsused()
-	{
+	public String getIsused() {
 		return this.isused;
 	}
 
-	public void setIsused(String isused )
-	{
+	public void setIsused(String isused) {
 		this.isused = isused;
 	}
 
 	@Column(name = "URL", length = 200)
-	public String getUrl()
-	{
+	public String getUrl() {
 		return this.url;
 	}
 
-	public void setUrl(String url )
-	{
+	public void setUrl(String url) {
 		this.url = url;
 	}
-	@Column(name = "STATE",length = 20)
-	public String getState()
-	{
+
+	@Column(name = "STATE", length = 20)
+	public String getState() {
 		return this.state;
 	}
 
-	public void setState(String state )
-	{
+	public void setState(String state) {
 		this.state = state;
 	}
-	
+
 	@Column(name = "ICONCLS", length = 100)
-	public String getIconCls()
-	{
+	public String getIconCls() {
 		return iconCls;
 	}
 
-	public void setIconCls(String iconCls )
-	{
+	public void setIconCls(String iconCls) {
 		this.iconCls = iconCls;
 	}
+
 	@Column(name = "STATUS", nullable = false, length = 1)
-	public String getStatus()
-	{
+	public String getStatus() {
 		return this.status;
 	}
 
-
-	public void setStatus(String status )
-	{
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
 	@Column(name = "DESCRIPTION", length = 2000)
-	public String getDescription()
-	{
+	public String getDescription() {
 		return this.description;
 	}
 
-	public void setDescription(String description )
-	{
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "CREATED", nullable = false, length = 10)
-	public Date getCreated()
-	{
+	public Date getCreated() {
 		return this.created;
 	}
 
-	public void setCreated(Date created )
-	{
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "LASTMOD", length = 10)
-	public Date getLastmod()
-	{
+	public Date getLastmod() {
 		return this.lastmod;
 	}
 
-	public void setLastmod(Date lastmod )
-	{
+	public void setLastmod(Date lastmod) {
 		this.lastmod = lastmod;
 	}
 
 	@Column(name = "CREATER")
-	public Integer getCreater()
-	{
+	public Integer getCreater() {
 		return this.creater;
 	}
 
-	public void setCreater(Integer creater )
-	{
+	public void setCreater(Integer creater) {
 		this.creater = creater;
 	}
 
 	@Column(name = "MODIFYER")
-	public Integer getModifyer()
-	{
+	public Integer getModifyer() {
 		return this.modifyer;
 	}
 
-	public void setModifyer(Integer modifyer )
-	{
+	public void setModifyer(Integer modifyer) {
 		this.modifyer = modifyer;
 	}
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "permission")
-	public Set<RolePermission> getRolePermissions()
-	{
+	public Set<RolePermission> getRolePermissions() {
 		return this.rolePermissions;
 	}
 
-	public void setRolePermissions(Set<RolePermission> rolePermissions )
-	{
+	public void setRolePermissions(Set<RolePermission> rolePermissions) {
 		this.rolePermissions = rolePermissions;
 	}
 

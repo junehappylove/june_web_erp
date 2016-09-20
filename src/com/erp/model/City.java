@@ -1,6 +1,7 @@
 package com.erp.model;
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,8 +20,7 @@ import org.hibernate.annotations.DynamicUpdate;
 @Table(name = "CITY", catalog = "ERP")
 @DynamicUpdate(true)
 @DynamicInsert(true)
-public class City implements java.io.Serializable
-{
+public class City implements java.io.Serializable {
 	private static final long serialVersionUID = 2605382447659254392L;
 	private Integer cityId;
 	private Integer provinceId;
@@ -34,13 +34,11 @@ public class City implements java.io.Serializable
 	// Constructors
 
 	/** default constructor */
-	public City()
-	{
+	public City() {
 	}
 
 	/** minimal constructor */
-	public City(Integer provinceId, String name, Date created, String status)
-	{
+	public City(Integer provinceId, String name, Date created, String status) {
 		this.provinceId = provinceId;
 		this.name = name;
 		this.created = created;
@@ -48,9 +46,8 @@ public class City implements java.io.Serializable
 	}
 
 	/** full constructor */
-	public City(Integer provinceId, String name, Date created, Date lastmod, String status,
-			Integer creater, Integer modifyer)
-	{
+	public City(Integer provinceId, String name, Date created, Date lastmod, String status, Integer creater,
+			Integer modifyer) {
 		this.provinceId = provinceId;
 		this.name = name;
 		this.created = created;
@@ -64,92 +61,76 @@ public class City implements java.io.Serializable
 	@Id
 	@GeneratedValue
 	@Column(name = "CITY_ID", unique = true, nullable = false)
-	public Integer getCityId()
-	{
+	public Integer getCityId() {
 		return this.cityId;
 	}
 
-	public void setCityId(Integer cityId )
-	{
+	public void setCityId(Integer cityId) {
 		this.cityId = cityId;
 	}
 
 	@Column(name = "PROVINCE_ID", nullable = false)
-	public Integer getProvinceId()
-	{
+	public Integer getProvinceId() {
 		return this.provinceId;
 	}
 
-	public void setProvinceId(Integer provinceId )
-	{
+	public void setProvinceId(Integer provinceId) {
 		this.provinceId = provinceId;
 	}
 
 	@Column(name = "NAME", nullable = false, length = 200)
-	public String getName()
-	{
+	public String getName() {
 		return this.name;
 	}
 
-	public void setName(String name )
-	{
+	public void setName(String name) {
 		this.name = name;
 	}
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "CREATED", nullable = false, length = 10)
-	public Date getCreated()
-	{
+	public Date getCreated() {
 		return this.created;
 	}
 
-	public void setCreated(Date created )
-	{
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "LASTMOD", length = 10)
-	public Date getLastmod()
-	{
+	public Date getLastmod() {
 		return this.lastmod;
 	}
 
-	public void setLastmod(Date lastmod )
-	{
+	public void setLastmod(Date lastmod) {
 		this.lastmod = lastmod;
 	}
 
 	@Column(name = "STATUS", nullable = false, length = 1)
-	public String getStatus()
-	{
+	public String getStatus() {
 		return this.status;
 	}
 
-	public void setStatus(String status )
-	{
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
 	@Column(name = "CREATER")
-	public Integer getCreater()
-	{
+	public Integer getCreater() {
 		return this.creater;
 	}
 
-	public void setCreater(Integer creater )
-	{
+	public void setCreater(Integer creater) {
 		this.creater = creater;
 	}
 
 	@Column(name = "MODIFYER")
-	public Integer getModifyer()
-	{
+	public Integer getModifyer() {
 		return this.modifyer;
 	}
 
-	public void setModifyer(Integer modifyer )
-	{
+	public void setModifyer(Integer modifyer) {
 		this.modifyer = modifyer;
 	}
 

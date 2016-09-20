@@ -9,23 +9,21 @@ import org.springframework.stereotype.Service;
 import com.erp.dao.PublicDao;
 import com.erp.model.CustomerContact;
 import com.erp.service.CstContactService;
+
 @Service("cstContactService")
-public class CstContactServiceImpl implements CstContactService
-{
+public class CstContactServiceImpl implements CstContactService {
 	private PublicDao<CustomerContact> publicDao;
+
 	@Autowired
-	public void setPublicDao(PublicDao<CustomerContact> publicDao )
-	{
+	public void setPublicDao(PublicDao<CustomerContact> publicDao) {
 		this.publicDao = publicDao;
 	}
-	
-	public List<CustomerContact> findCustomerContactList(Integer customerId)
-	{
-		if (null==customerId||"".equals(customerId))
-		{
+
+	public List<CustomerContact> findCustomerContactList(Integer customerId) {
+		if (null == customerId || "".equals(customerId)) {
 			return new ArrayList<CustomerContact>();
-		}else {
-			String hql="from CustomerContact t where t.status='A' and t.customerId="+customerId;
+		} else {
+			String hql = "from CustomerContact t where t.status='A' and t.customerId=" + customerId;
 			return publicDao.find(hql);
 		}
 	}

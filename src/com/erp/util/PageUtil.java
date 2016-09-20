@@ -1,17 +1,15 @@
 package com.erp.util;
 
-public class PageUtil
-{
+public class PageUtil {
 	public Integer page;
 	public Integer rows;
 	public String searchAnds;
 	public String searchColumnNames;
 	public String searchConditions;
 	public String searchVals;
-	
-	public PageUtil(Integer page, Integer rows, String searchAnds, String searchColumnNames,
-			String searchConditions, String searchVals)
-	{
+
+	public PageUtil(Integer page, Integer rows, String searchAnds, String searchColumnNames, String searchConditions,
+			String searchVals) {
 		super();
 		this.page = page;
 		this.rows = rows;
@@ -20,52 +18,52 @@ public class PageUtil
 		this.searchConditions = searchConditions;
 		this.searchVals = searchVals;
 	}
-	public Integer getPage()
-	{
+
+	public Integer getPage() {
 		return page;
 	}
-	public void setPage(Integer page )
-	{
+
+	public void setPage(Integer page) {
 		this.page = page;
 	}
-	public Integer getRows()
-	{
+
+	public Integer getRows() {
 		return rows;
 	}
-	public void setRows(Integer rows )
-	{
+
+	public void setRows(Integer rows) {
 		this.rows = rows;
 	}
-	public String getSearchAnds()
-	{
+
+	public String getSearchAnds() {
 		return searchAnds;
 	}
-	public void setSearchAnds(String searchAnds )
-	{
+
+	public void setSearchAnds(String searchAnds) {
 		this.searchAnds = searchAnds;
 	}
-	public String getSearchColumnNames()
-	{
+
+	public String getSearchColumnNames() {
 		return searchColumnNames;
 	}
-	public void setSearchColumnNames(String searchColumnNames )
-	{
+
+	public void setSearchColumnNames(String searchColumnNames) {
 		this.searchColumnNames = searchColumnNames;
 	}
-	public String getSearchConditions()
-	{
+
+	public String getSearchConditions() {
 		return searchConditions;
 	}
-	public void setSearchConditions(String searchConditions )
-	{
+
+	public void setSearchConditions(String searchConditions) {
 		this.searchConditions = searchConditions;
 	}
-	public String getSearchVals()
-	{
+
+	public String getSearchVals() {
 		return searchVals;
 	}
-	public void setSearchVals(String searchVals )
-	{
+
+	public void setSearchVals(String searchVals) {
 		this.searchVals = searchVals;
 	}
 }

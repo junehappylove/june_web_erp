@@ -12,6 +12,7 @@
 			n = "0" + n;
 		}
 	%>
-	<img alt="" src="${pageContext.request.contextPath}/data/dogs/puppy_dogs_<%=n%>.png">
+	<img alt=""
+		src="${pageContext.request.contextPath}/data/dogs/puppy_dogs_<%=n%>.png">
 </body>
 </html>

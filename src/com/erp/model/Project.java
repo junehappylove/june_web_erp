@@ -1,6 +1,7 @@
 package com.erp.model;
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,8 +20,7 @@ import org.hibernate.annotations.DynamicUpdate;
 @Table(name = "PROJECT", catalog = "ERP")
 @DynamicUpdate(true)
 @DynamicInsert(true)
-public class Project implements java.io.Serializable
-{
+public class Project implements java.io.Serializable {
 	private static final long serialVersionUID = -2437115340735034515L;
 	private Integer projectId;
 	private String myid;
@@ -55,19 +55,16 @@ public class Project implements java.io.Serializable
 	// Constructors
 
 	/** default constructor */
-	public Project()
-	{
+	public Project() {
 	}
 
 	/** full constructor */
-	public Project(String myid, String name, Date setupDate, Integer classId, String className,
-			Integer customerId, String customerMyid, String telNo, String contacts, String mobile,
-			Integer sourceId, String sourceName, String budget, Date startTime, Date endTime,
-			String description, Integer attachmentId, String shared, Integer printCount,
-			Integer managerId, String managerName, Integer managerOrganizationId,
-			String managerOrganizationName, Date created, Date lastmod, String status,
-			Integer creater, Integer modifyer)
-	{
+	public Project(String myid, String name, Date setupDate, Integer classId, String className, Integer customerId,
+			String customerMyid, String telNo, String contacts, String mobile, Integer sourceId, String sourceName,
+			String budget, Date startTime, Date endTime, String description, Integer attachmentId, String shared,
+			Integer printCount, Integer managerId, String managerName, Integer managerOrganizationId,
+			String managerOrganizationName, Date created, Date lastmod, String status, Integer creater,
+			Integer modifyer) {
 		this.myid = myid;
 		this.name = name;
 		this.setupDate = setupDate;
@@ -102,326 +99,268 @@ public class Project implements java.io.Serializable
 	@Id
 	@GeneratedValue
 	@Column(name = "PROJECT_ID", unique = true, nullable = false)
-	public Integer getProjectId()
-	{
+	public Integer getProjectId() {
 		return this.projectId;
 	}
 
-	public void setProjectId(Integer projectId )
-	{
+	public void setProjectId(Integer projectId) {
 		this.projectId = projectId;
 	}
 
 	@Column(name = "MYID", length = 55)
-	public String getMyid()
-	{
+	public String getMyid() {
 		return this.myid;
 	}
 
-	public void setMyid(String myid )
-	{
+	public void setMyid(String myid) {
 		this.myid = myid;
 	}
 
 	@Column(name = "NAME", length = 200)
-	public String getName()
-	{
+	public String getName() {
 		return this.name;
 	}
 
-	public void setName(String name )
-	{
+	public void setName(String name) {
 		this.name = name;
 	}
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "SETUP_DATE", length = 10)
-	public Date getSetupDate()
-	{
+	public Date getSetupDate() {
 		return this.setupDate;
 	}
 
-	public void setSetupDate(Date setupDate )
-	{
+	public void setSetupDate(Date setupDate) {
 		this.setupDate = setupDate;
 	}
 
 	@Column(name = "CLASS_ID")
-	public Integer getClassId()
-	{
+	public Integer getClassId() {
 		return this.classId;
 	}
 
-	public void setClassId(Integer classId )
-	{
+	public void setClassId(Integer classId) {
 		this.classId = classId;
 	}
 
 	@Column(name = "CLASS_NAME", length = 200)
-	public String getClassName()
-	{
+	public String getClassName() {
 		return this.className;
 	}
 
-	public void setClassName(String className )
-	{
+	public void setClassName(String className) {
 		this.className = className;
 	}
 
 	@Column(name = "CUSTOMER_ID")
-	public Integer getCustomerId()
-	{
+	public Integer getCustomerId() {
 		return this.customerId;
 	}
 
-	public void setCustomerId(Integer customerId )
-	{
+	public void setCustomerId(Integer customerId) {
 		this.customerId = customerId;
 	}
 
 	@Column(name = "CUSTOMER_MYID", length = 55)
-	public String getCustomerMyid()
-	{
+	public String getCustomerMyid() {
 		return this.customerMyid;
 	}
 
-	public void setCustomerMyid(String customerMyid )
-	{
+	public void setCustomerMyid(String customerMyid) {
 		this.customerMyid = customerMyid;
 	}
 
 	@Column(name = "TEL_NO", length = 20)
-	public String getTelNo()
-	{
+	public String getTelNo() {
 		return this.telNo;
 	}
 
-	public void setTelNo(String telNo )
-	{
+	public void setTelNo(String telNo) {
 		this.telNo = telNo;
 	}
 
 	@Column(name = "CONTACTS", length = 20)
-	public String getContacts()
-	{
+	public String getContacts() {
 		return this.contacts;
 	}
 
-	public void setContacts(String contacts )
-	{
+	public void setContacts(String contacts) {
 		this.contacts = contacts;
 	}
 
 	@Column(name = "MOBILE", length = 20)
-	public String getMobile()
-	{
+	public String getMobile() {
 		return this.mobile;
 	}
 
-	public void setMobile(String mobile )
-	{
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
 
 	@Column(name = "SOURCE_ID")
-	public Integer getSourceId()
-	{
+	public Integer getSourceId() {
 		return this.sourceId;
 	}
 
-	public void setSourceId(Integer sourceId )
-	{
+	public void setSourceId(Integer sourceId) {
 		this.sourceId = sourceId;
 	}
 
 	@Column(name = "SOURCE_NAME", length = 200)
-	public String getSourceName()
-	{
+	public String getSourceName() {
 		return this.sourceName;
 	}
 
-	public void setSourceName(String sourceName )
-	{
+	public void setSourceName(String sourceName) {
 		this.sourceName = sourceName;
 	}
 
 	@Column(name = "BUDGET", length = 55)
-	public String getBudget()
-	{
+	public String getBudget() {
 		return this.budget;
 	}
 
-	public void setBudget(String budget )
-	{
+	public void setBudget(String budget) {
 		this.budget = budget;
 	}
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "START_TIME", length = 10)
-	public Date getStartTime()
-	{
+	public Date getStartTime() {
 		return this.startTime;
 	}
 
-	public void setStartTime(Date startTime )
-	{
+	public void setStartTime(Date startTime) {
 		this.startTime = startTime;
 	}
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "END_TIME", length = 10)
-	public Date getEndTime()
-	{
+	public Date getEndTime() {
 		return this.endTime;
 	}
 
-	public void setEndTime(Date endTime )
-	{
+	public void setEndTime(Date endTime) {
 		this.endTime = endTime;
 	}
 
 	@Column(name = "DESCRIPTION", length = 2000)
-	public String getDescription()
-	{
+	public String getDescription() {
 		return this.description;
 	}
 
-	public void setDescription(String description )
-	{
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
 	@Column(name = "ATTACHMENT_ID")
-	public Integer getAttachmentId()
-	{
+	public Integer getAttachmentId() {
 		return this.attachmentId;
 	}
 
-	public void setAttachmentId(Integer attachmentId )
-	{
+	public void setAttachmentId(Integer attachmentId) {
 		this.attachmentId = attachmentId;
 	}
 
 	@Column(name = "SHARED", length = 200)
-	public String getShared()
-	{
+	public String getShared() {
 		return this.shared;
 	}
 
-	public void setShared(String shared )
-	{
+	public void setShared(String shared) {
 		this.shared = shared;
 	}
 
 	@Column(name = "PRINT_COUNT")
-	public Integer getPrintCount()
-	{
+	public Integer getPrintCount() {
 		return this.printCount;
 	}
 
-	public void setPrintCount(Integer printCount )
-	{
+	public void setPrintCount(Integer printCount) {
 		this.printCount = printCount;
 	}
 
 	@Column(name = "MANAGER_ID")
-	public Integer getManagerId()
-	{
+	public Integer getManagerId() {
 		return this.managerId;
 	}
 
-	public void setManagerId(Integer managerId )
-	{
+	public void setManagerId(Integer managerId) {
 		this.managerId = managerId;
 	}
 
 	@Column(name = "MANAGER_NAME", length = 55)
-	public String getManagerName()
-	{
+	public String getManagerName() {
 		return this.managerName;
 	}
 
-	public void setManagerName(String managerName )
-	{
+	public void setManagerName(String managerName) {
 		this.managerName = managerName;
 	}
 
 	@Column(name = "MANAGER_ORGANIZATION_ID")
-	public Integer getManagerOrganizationId()
-	{
+	public Integer getManagerOrganizationId() {
 		return this.managerOrganizationId;
 	}
 
-	public void setManagerOrganizationId(Integer managerOrganizationId )
-	{
+	public void setManagerOrganizationId(Integer managerOrganizationId) {
 		this.managerOrganizationId = managerOrganizationId;
 	}
 
 	@Column(name = "MANAGER_ORGANIZATION_NAME", length = 55)
-	public String getManagerOrganizationName()
-	{
+	public String getManagerOrganizationName() {
 		return this.managerOrganizationName;
 	}
 
-	public void setManagerOrganizationName(String managerOrganizationName )
-	{
+	public void setManagerOrganizationName(String managerOrganizationName) {
 		this.managerOrganizationName = managerOrganizationName;
 	}
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "CREATED", length = 10)
-	public Date getCreated()
-	{
+	public Date getCreated() {
 		return this.created;
 	}
 
-	public void setCreated(Date created )
-	{
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "LASTMOD", length = 10)
-	public Date getLastmod()
-	{
+	public Date getLastmod() {
 		return this.lastmod;
 	}
 
-	public void setLastmod(Date lastmod )
-	{
+	public void setLastmod(Date lastmod) {
 		this.lastmod = lastmod;
 	}
 
 	@Column(name = "STATUS", length = 1)
-	public String getStatus()
-	{
+	public String getStatus() {
 		return this.status;
 	}
 
-	public void setStatus(String status )
-	{
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
 	@Column(name = "CREATER")
-	public Integer getCreater()
-	{
+	public Integer getCreater() {
 		return this.creater;
 	}
 
-	public void setCreater(Integer creater )
-	{
+	public void setCreater(Integer creater) {
 		this.creater = creater;
 	}
 
 	@Column(name = "MODIFYER")
-	public Integer getModifyer()
-	{
+	public Integer getModifyer() {
 		return this.modifyer;
 	}
 
-	public void setModifyer(Integer modifyer )
-	{
+	public void setModifyer(Integer modifyer) {
 		this.modifyer = modifyer;
 	}
 

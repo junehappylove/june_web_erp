@@ -25,20 +25,24 @@
 	<constant name="struts.tag.altSyntax" value="true" />
 	<!-- 对于WebLogic,Orion,OC4J此属性应该设置成true -->
 	<constant name="struts.dispatcher.parametersWorkaround" value="false" />
-	<constant name="struts.convention.default.parent.package" value="default-package" />
+	<constant name="struts.convention.default.parent.package"
+		value="default-package" />
 	<!-- 配置log4j 的 日志级别 -->
-    <constant name="log4j.logger.org.apache.struts2.convention" value="DEBUG" />
-	
+	<constant name="log4j.logger.org.apache.struts2.convention"
+		value="DEBUG" />
+
 	<package name="default-package" extends="convention-default">
-			<interceptors>
+		<interceptors>
 			<!-- 字符集拦截器 -->
-			<interceptor name="encodingInterceptor" class="com.erp.interceptor.EncodingInterceptor" />
+			<interceptor name="encodingInterceptor"
+				class="com.erp.interceptor.EncodingInterceptor" />
 			<interceptor-stack name="encodingStack">
 				<interceptor-ref name="defaultStack"></interceptor-ref>
 				<interceptor-ref name="encodingInterceptor"></interceptor-ref>
 			</interceptor-stack>
 			<!-- session拦截器 -->
-			<interceptor name="sessionInterceptor" class="com.erp.interceptor.SessionInterceptor" />
+			<interceptor name="sessionInterceptor"
+				class="com.erp.interceptor.SessionInterceptor" />
 			<interceptor-stack name="sessionStack">
 				<interceptor-ref name="encodingStack"></interceptor-ref>
 				<interceptor-ref name="sessionInterceptor">
@@ -46,13 +50,10 @@
 				</interceptor-ref>
 			</interceptor-stack>
 			<!-- 权限拦截器 -->
-			<!--<interceptor name="authInterceptor" class="com.erp.interceptor.AuthInterceptor" />
-			<interceptor-stack name="authStack">
-				<interceptor-ref name="sessionStack"></interceptor-ref>
-				<interceptor-ref name="authInterceptor">
-					<param name="excludeMethods">doNotNeedSession_*,doNotNeedAuth_*</param>
-				</interceptor-ref>
-			</interceptor-stack>-->
+			<!--<interceptor name="authInterceptor" class="com.erp.interceptor.AuthInterceptor" 
+				/> <interceptor-stack name="authStack"> <interceptor-ref name="sessionStack"></interceptor-ref> 
+				<interceptor-ref name="authInterceptor"> <param name="excludeMethods">doNotNeedSession_*,doNotNeedAuth_*</param> 
+				</interceptor-ref> </interceptor-stack> -->
 		</interceptors>
 		<!-- 全局拦截器栈 -->
 		<default-interceptor-ref name="sessionStack"></default-interceptor-ref>
@@ -64,8 +65,9 @@
 		</global-results>
 
 		<global-exception-mappings>
-			<exception-mapping result="strutsException" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="strutsException"
+				exception="java.lang.Exception"></exception-mapping>
 		</global-exception-mappings>
-			
-	</package> 
+
+	</package>
 </struts>

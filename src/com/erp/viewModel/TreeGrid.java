@@ -1,8 +1,6 @@
 package com.erp.viewModel;
 
-
-public class TreeGrid
-{
+public class TreeGrid {
 	private String id;
 	private String pid;
 	private String state;
@@ -16,108 +14,108 @@ public class TreeGrid
 	private String iconCls;
 	private String type;
 	private String isused;
-	public String getIsused()
-	{
+
+	public String getIsused() {
 		return isused;
 	}
-	public void setIsused(String isused )
-	{
+
+	public void setIsused(String isused) {
 		this.isused = isused;
 	}
-	public String getType()
-	{
+
+	public String getType() {
 		return type;
 	}
-	public void setType(String type )
-	{
+
+	public void setType(String type) {
 		this.type = type;
 	}
-	public String getId()
-	{
+
+	public String getId() {
 		return id;
 	}
-	public void setId(String id )
-	{
+
+	public void setId(String id) {
 		this.id = id;
 	}
-	public String getPid()
-	{
+
+	public String getPid() {
 		return pid;
 	}
-	public void setPid(String pid )
-	{
+
+	public void setPid(String pid) {
 		this.pid = pid;
 	}
-	public String getState()
-	{
+
+	public String getState() {
 		return state;
 	}
-	public void setState(String state )
-	{
+
+	public void setState(String state) {
 		this.state = state;
 	}
-	public String getName()
-	{
+
+	public String getName() {
 		return name;
 	}
-	public void setName(String name )
-	{
+
+	public void setName(String name) {
 		this.name = name;
 	}
-	public String getStatus()
-	{
+
+	public String getStatus() {
 		return status;
 	}
-	public void setStatus(String status )
-	{
+
+	public void setStatus(String status) {
 		this.status = status;
 	}
-	public String getSort()
-	{
+
+	public String getSort() {
 		return sort;
 	}
-	public void setSort(String sort )
-	{
+
+	public void setSort(String sort) {
 		this.sort = sort;
 	}
-	public String getPath()
-	{
+
+	public String getPath() {
 		return path;
 	}
-	public void setPath(String path )
-	{
+
+	public void setPath(String path) {
 		this.path = path;
 	}
-	public String getPName()
-	{
+
+	public String getPName() {
 		return PName;
 	}
-	public void setPName(String pName )
-	{
+
+	public void setPName(String pName) {
 		PName = pName;
 	}
-	public String getMyid()
-	{
+
+	public String getMyid() {
 		return myid;
 	}
-	public void setMyid(String myid )
-	{
+
+	public void setMyid(String myid) {
 		this.myid = myid;
 	}
-	public String getDescription()
-	{
+
+	public String getDescription() {
 		return description;
 	}
-	public void setDescription(String description )
-	{
+
+	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getIconCls()
-	{
+
+	public String getIconCls() {
 		return iconCls;
 	}
-	public void setIconCls(String iconCls )
-	{
+
+	public void setIconCls(String iconCls) {
 		this.iconCls = iconCls;
 	}
 }

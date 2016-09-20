@@ -1,5 +1,5 @@
 /**   
-* @Title: JsonHelper.java TODO:
+* @Title: JsonHelper.java 
 * @Package com.erp.util
 * @Description: TODO
 * @author chenguang 
@@ -9,18 +9,12 @@
 package com.erp.util;
 
 /**
- * 类功能说明 TODO:json帮助类
- * 类修改者	修改日期
- * 修改说明
- * <p>Title: JsonHelper.java</p>
- * <p>Description:福产流通科技</p>
- * <p>Copyright: Copyright (c) 2012</p>
- * <p>Company:福产流通科技</p>
+ * 类功能说明 json帮助类 
+ * 
  * @author wjw.happy.love@163.com
  * @date 2013-4-19 上午08:19:37
  * @version V1.0
  */
-public class JsonHelper
-{
+public class JsonHelper {
 
 }

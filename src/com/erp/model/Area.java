@@ -1,6 +1,7 @@
 package com.erp.model;
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,8 +20,7 @@ import org.hibernate.annotations.DynamicUpdate;
 @Table(name = "AREA", catalog = "ERP")
 @DynamicUpdate(true)
 @DynamicInsert(true)
-public class Area implements java.io.Serializable
-{
+public class Area implements java.io.Serializable {
 	private static final long serialVersionUID = -2488468164422496390L;
 	private Integer areaId;
 	private String name;
@@ -34,22 +34,19 @@ public class Area implements java.io.Serializable
 	// Constructors
 
 	/** default constructor */
-	public Area()
-	{
+	public Area() {
 	}
 
 	/** minimal constructor */
-	public Area(String name, Date created, String status)
-	{
+	public Area(String name, Date created, String status) {
 		this.name = name;
 		this.created = created;
 		this.status = status;
 	}
 
 	/** full constructor */
-	public Area(String name, Date created, Date lastmod, String status, Integer creater,
-			Integer modifyer, Integer pid)
-	{
+	public Area(String name, Date created, Date lastmod, String status, Integer creater, Integer modifyer,
+			Integer pid) {
 		this.name = name;
 		this.created = created;
 		this.lastmod = lastmod;
@@ -63,92 +60,76 @@ public class Area implements java.io.Serializable
 	@Id
 	@GeneratedValue
 	@Column(name = "AREA_ID", unique = true, nullable = false)
-	public Integer getAreaId()
-	{
+	public Integer getAreaId() {
 		return this.areaId;
 	}
 
-	public void setAreaId(Integer areaId )
-	{
+	public void setAreaId(Integer areaId) {
 		this.areaId = areaId;
 	}
 
 	@Column(name = "NAME", nullable = false, length = 200)
-	public String getName()
-	{
+	public String getName() {
 		return this.name;
 	}
 
-	public void setName(String name )
-	{
+	public void setName(String name) {
 		this.name = name;
 	}
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "CREATED", nullable = false, length = 10)
-	public Date getCreated()
-	{
+	public Date getCreated() {
 		return this.created;
 	}
 
-	public void setCreated(Date created )
-	{
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "LASTMOD", length = 10)
-	public Date getLastmod()
-	{
+	public Date getLastmod() {
 		return this.lastmod;
 	}
 
-	public void setLastmod(Date lastmod )
-	{
+	public void setLastmod(Date lastmod) {
 		this.lastmod = lastmod;
 	}
 
 	@Column(name = "STATUS", nullable = false, length = 1)
-	public String getStatus()
-	{
+	public String getStatus() {
 		return this.status;
 	}
 
-	public void setStatus(String status )
-	{
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
 	@Column(name = "CREATER")
-	public Integer getCreater()
-	{
+	public Integer getCreater() {
 		return this.creater;
 	}
 
-	public void setCreater(Integer creater )
-	{
+	public void setCreater(Integer creater) {
 		this.creater = creater;
 	}
 
 	@Column(name = "MODIFYER")
-	public Integer getModifyer()
-	{
+	public Integer getModifyer() {
 		return this.modifyer;
 	}
 
-	public void setModifyer(Integer modifyer )
-	{
+	public void setModifyer(Integer modifyer) {
 		this.modifyer = modifyer;
 	}
 
 	@Column(name = "PID")
-	public Integer getPid()
-	{
+	public Integer getPid() {
 		return this.pid;
 	}
 
-	public void setPid(Integer pid )
-	{
+	public void setPid(Integer pid) {
 		this.pid = pid;
 	}
 

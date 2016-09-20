@@ -15,14 +15,10 @@ import java.net.URLEncoder;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+
 /**
- * 类功能说明 TODO:文件操作类
- * 类修改者	修改日期
- * 修改说明
- * <p>Title: BaseService.java</p>
- * <p>Description:福产流通科技</p>
- * <p>Copyright: Copyright (c) 2012</p>
- * <p>Company:福产流通科技</p>
+ * 类功能说明 文件操作类 
+ * 
  * @author wjw.happy.love@163.com
  * @date 2013-4-19 下午03:18:05
  * @version V1.0
@@ -32,7 +28,7 @@ public class FileUtil {
 	private static final Logger logger = Logger.getLogger(FileUtil.class);
 
 	private static final int BUFFER = 1024;
-	
+
 	/**
 	 * 功 能: 拷贝文件(只能拷贝文件)
 	 * 
@@ -191,26 +187,16 @@ public class FileUtil {
 			return false;
 		return true;
 	}
-	
-	/**  
-	* 函数功能说明
-	* Administrator修改者名字
-	* 2013-7-9修改日期
-	* 修改内容
-	* @Title: downFile 
-	* @Description: TODO:下载文件
-	* @param @param path
-	* @param @param response
-	* @param @param allPath
-	* @param @throws FileNotFoundException
-	* @param @throws IOException
-	* @param @throws UnsupportedEncodingException    设定文件 
-	* @return void    返回类型 
-	* @throws 
-	*/
-	public static void downFile(String path, HttpServletResponse response, String allPath )
-			throws FileNotFoundException, IOException, UnsupportedEncodingException
-	{
+
+	/**
+	 * 函数功能说明 Administrator修改者名字 2013-7-9修改日期 修改内容 @Title:
+	 * downFile @Description: 下载文件 @param @param path @param @param
+	 * response @param @param allPath @param @throws
+	 * FileNotFoundException @param @throws IOException @param @throws
+	 * UnsupportedEncodingException 设定文件 @return void 返回类型 @throws
+	 */
+	public static void downFile(String path, HttpServletResponse response, String allPath)
+			throws FileNotFoundException, IOException, UnsupportedEncodingException {
 		BufferedInputStream bis = null;
 		BufferedOutputStream bos = null;
 		OutputStream fos = null;
@@ -220,8 +206,7 @@ public class FileUtil {
 		bis = new BufferedInputStream(fis);
 		fos = response.getOutputStream();
 		bos = new BufferedOutputStream(fos);
-		response.setHeader("Content-disposition", "attachment;filename="
-				+ URLEncoder.encode(path, "utf-8"));
+		response.setHeader("Content-disposition", "attachment;filename=" + URLEncoder.encode(path, "utf-8"));
 		int bytesRead = 0;
 		byte[] buffer = new byte[8192];
 		while ((bytesRead = bis.read(buffer, 0, 8192)) != -1) {

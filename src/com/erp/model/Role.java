@@ -3,6 +3,7 @@ package com.erp.model;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,8 +25,7 @@ import org.hibernate.annotations.DynamicUpdate;
 @Table(name = "ROLE", catalog = "ERP")
 @DynamicUpdate(true)
 @DynamicInsert(true)
-public class Role implements java.io.Serializable
-{
+public class Role implements java.io.Serializable {
 	private static final long serialVersionUID = -8220535212044563981L;
 	private Integer roleId;
 	private String name;
@@ -42,15 +42,12 @@ public class Role implements java.io.Serializable
 	// Constructors
 
 	/** default constructor */
-	public Role()
-	{
+	public Role() {
 	}
 
 	/** full constructor */
-	public Role(String name, String description, String status, Date created, Date lastmod,
-			Integer sort, Integer creater, Integer modifyer, Set<UserRole> userRoles,
-			Set<RolePermission> rolePermissions)
-	{
+	public Role(String name, String description, String status, Date created, Date lastmod, Integer sort,
+			Integer creater, Integer modifyer, Set<UserRole> userRoles, Set<RolePermission> rolePermissions) {
 		this.name = name;
 		this.description = description;
 		this.status = status;
@@ -67,125 +64,103 @@ public class Role implements java.io.Serializable
 	@Id
 	@GeneratedValue
 	@Column(name = "ROLE_ID", unique = true, nullable = false)
-	public Integer getRoleId()
-	{
+	public Integer getRoleId() {
 		return this.roleId;
 	}
 
-	public void setRoleId(Integer roleId )
-	{
+	public void setRoleId(Integer roleId) {
 		this.roleId = roleId;
 	}
 
 	@Column(name = "NAME", length = 55)
-	public String getName()
-	{
+	public String getName() {
 		return this.name;
 	}
 
-	public void setName(String name )
-	{
+	public void setName(String name) {
 		this.name = name;
 	}
 
 	@Column(name = "DESCRIPTION", length = 500)
-	public String getDescription()
-	{
+	public String getDescription() {
 		return this.description;
 	}
 
-	public void setDescription(String description )
-	{
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
 	@Column(name = "STATUS", length = 1)
-	public String getStatus()
-	{
+	public String getStatus() {
 		return this.status;
 	}
 
-	public void setStatus(String status )
-	{
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "CREATED", length = 10)
-	public Date getCreated()
-	{
+	public Date getCreated() {
 		return this.created;
 	}
 
-	public void setCreated(Date created )
-	{
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "LASTMOD", length = 10)
-	public Date getLastmod()
-	{
+	public Date getLastmod() {
 		return this.lastmod;
 	}
 
-	public void setLastmod(Date lastmod )
-	{
+	public void setLastmod(Date lastmod) {
 		this.lastmod = lastmod;
 	}
 
 	@Column(name = "SORT")
-	public Integer getSort()
-	{
+	public Integer getSort() {
 		return this.sort;
 	}
 
-	public void setSort(Integer sort )
-	{
+	public void setSort(Integer sort) {
 		this.sort = sort;
 	}
 
 	@Column(name = "CREATER")
-	public Integer getCreater()
-	{
+	public Integer getCreater() {
 		return this.creater;
 	}
 
-	public void setCreater(Integer creater )
-	{
+	public void setCreater(Integer creater) {
 		this.creater = creater;
 	}
 
 	@Column(name = "MODIFYER")
-	public Integer getModifyer()
-	{
+	public Integer getModifyer() {
 		return this.modifyer;
 	}
 
-	public void setModifyer(Integer modifyer )
-	{
+	public void setModifyer(Integer modifyer) {
 		this.modifyer = modifyer;
 	}
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "role")
-	public Set<UserRole> getUserRoles()
-	{
+	public Set<UserRole> getUserRoles() {
 		return this.userRoles;
 	}
 
-	public void setUserRoles(Set<UserRole> userRoles )
-	{
+	public void setUserRoles(Set<UserRole> userRoles) {
 		this.userRoles = userRoles;
 	}
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "role")
-	public Set<RolePermission> getRolePermissions()
-	{
+	public Set<RolePermission> getRolePermissions() {
 		return this.rolePermissions;
 	}
 
-	public void setRolePermissions(Set<RolePermission> rolePermissions )
-	{
+	public void setRolePermissions(Set<RolePermission> rolePermissions) {
 		this.rolePermissions = rolePermissions;
 	}
 

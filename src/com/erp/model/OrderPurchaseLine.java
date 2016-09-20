@@ -1,6 +1,7 @@
 package com.erp.model;
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,8 +15,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "ORDER_PURCHASE_LINE", catalog = "ERP")
-public class OrderPurchaseLine implements java.io.Serializable
-{
+public class OrderPurchaseLine implements java.io.Serializable {
 	private static final long serialVersionUID = -7943495920395585672L;
 	private Integer orderPurchaseLid;
 	private Integer orderPurchaseId;
@@ -46,17 +46,14 @@ public class OrderPurchaseLine implements java.io.Serializable
 	// Constructors
 
 	/** default constructor */
-	public OrderPurchaseLine()
-	{
+	public OrderPurchaseLine() {
 	}
 
 	/** full constructor */
-	public OrderPurchaseLine(Integer orderPurchaseId, Integer itemId, String myid, String itemName,
-			String spec, String unit, Integer brandId, String brandName, Integer orderQty,
-			String description, Date created, Date lastmod, String status, Integer creater,
-			Integer modifyer, Double price, Double tax, Double priceTax, Double amount,
-			Double taxAmount, Double priceTaxAmount, Integer taxNo, Integer factQty, Double discountNo)
-	{
+	public OrderPurchaseLine(Integer orderPurchaseId, Integer itemId, String myid, String itemName, String spec,
+			String unit, Integer brandId, String brandName, Integer orderQty, String description, Date created,
+			Date lastmod, String status, Integer creater, Integer modifyer, Double price, Double tax, Double priceTax,
+			Double amount, Double taxAmount, Double priceTaxAmount, Integer taxNo, Integer factQty, Double discountNo) {
 		this.orderPurchaseId = orderPurchaseId;
 		this.itemId = itemId;
 		this.myid = myid;
@@ -87,279 +84,229 @@ public class OrderPurchaseLine implements java.io.Serializable
 	@Id
 	@GeneratedValue
 	@Column(name = "ORDER_PURCHASE_LID", unique = true, nullable = false)
-	public Integer getOrderPurchaseLid()
-	{
+	public Integer getOrderPurchaseLid() {
 		return this.orderPurchaseLid;
 	}
 
-	public void setOrderPurchaseLid(Integer orderPurchaseLid )
-	{
+	public void setOrderPurchaseLid(Integer orderPurchaseLid) {
 		this.orderPurchaseLid = orderPurchaseLid;
 	}
 
 	@Column(name = "ORDER_PURCHASE_ID")
-	public Integer getOrderPurchaseId()
-	{
+	public Integer getOrderPurchaseId() {
 		return this.orderPurchaseId;
 	}
 
-	public void setOrderPurchaseId(Integer orderPurchaseId )
-	{
+	public void setOrderPurchaseId(Integer orderPurchaseId) {
 		this.orderPurchaseId = orderPurchaseId;
 	}
 
 	@Column(name = "ITEM_ID")
-	public Integer getItemId()
-	{
+	public Integer getItemId() {
 		return this.itemId;
 	}
 
-	public void setItemId(Integer itemId )
-	{
+	public void setItemId(Integer itemId) {
 		this.itemId = itemId;
 	}
 
 	@Column(name = "MYID", length = 55)
-	public String getMyid()
-	{
+	public String getMyid() {
 		return this.myid;
 	}
 
-	public void setMyid(String myid )
-	{
+	public void setMyid(String myid) {
 		this.myid = myid;
 	}
 
 	@Column(name = "ITEM_NAME", length = 200)
-	public String getItemName()
-	{
+	public String getItemName() {
 		return this.itemName;
 	}
 
-	public void setItemName(String itemName )
-	{
+	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
 
 	@Column(name = "SPEC", length = 200)
-	public String getSpec()
-	{
+	public String getSpec() {
 		return this.spec;
 	}
 
-	public void setSpec(String spec )
-	{
+	public void setSpec(String spec) {
 		this.spec = spec;
 	}
 
 	@Column(name = "UNIT", length = 55)
-	public String getUnit()
-	{
+	public String getUnit() {
 		return this.unit;
 	}
 
-	public void setUnit(String unit )
-	{
+	public void setUnit(String unit) {
 		this.unit = unit;
 	}
 
 	@Column(name = "BRAND_ID")
-	public Integer getBrandId()
-	{
+	public Integer getBrandId() {
 		return this.brandId;
 	}
 
-	public void setBrandId(Integer brandId )
-	{
+	public void setBrandId(Integer brandId) {
 		this.brandId = brandId;
 	}
 
 	@Column(name = "BRAND_NAME", length = 200)
-	public String getBrandName()
-	{
+	public String getBrandName() {
 		return this.brandName;
 	}
 
-	public void setBrandName(String brandName )
-	{
+	public void setBrandName(String brandName) {
 		this.brandName = brandName;
 	}
 
 	@Column(name = "ORDER_QTY")
-	public Integer getOrderQty()
-	{
+	public Integer getOrderQty() {
 		return this.orderQty;
 	}
 
-	public void setOrderQty(Integer orderQty )
-	{
+	public void setOrderQty(Integer orderQty) {
 		this.orderQty = orderQty;
 	}
 
 	@Column(name = "DESCRIPTION", length = 1000)
-	public String getDescription()
-	{
+	public String getDescription() {
 		return this.description;
 	}
 
-	public void setDescription(String description )
-	{
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "CREATED", length = 10)
-	public Date getCreated()
-	{
+	public Date getCreated() {
 		return this.created;
 	}
 
-	public void setCreated(Date created )
-	{
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "LASTMOD", length = 10)
-	public Date getLastmod()
-	{
+	public Date getLastmod() {
 		return this.lastmod;
 	}
 
-	public void setLastmod(Date lastmod )
-	{
+	public void setLastmod(Date lastmod) {
 		this.lastmod = lastmod;
 	}
 
 	@Column(name = "STATUS", length = 1)
-	public String getStatus()
-	{
+	public String getStatus() {
 		return this.status;
 	}
 
-	public void setStatus(String status )
-	{
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
 	@Column(name = "CREATER")
-	public Integer getCreater()
-	{
+	public Integer getCreater() {
 		return this.creater;
 	}
 
-	public void setCreater(Integer creater )
-	{
+	public void setCreater(Integer creater) {
 		this.creater = creater;
 	}
 
 	@Column(name = "MODIFYER")
-	public Integer getModifyer()
-	{
+	public Integer getModifyer() {
 		return this.modifyer;
 	}
 
-	public void setModifyer(Integer modifyer )
-	{
+	public void setModifyer(Integer modifyer) {
 		this.modifyer = modifyer;
 	}
 
 	@Column(name = "PRICE", precision = 18, scale = 8)
-	public Double getPrice()
-	{
+	public Double getPrice() {
 		return this.price;
 	}
 
-	public void setPrice(Double price )
-	{
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
 	@Column(name = "TAX", precision = 18, scale = 8)
-	public Double getTax()
-	{
+	public Double getTax() {
 		return this.tax;
 	}
 
-	public void setTax(Double tax )
-	{
+	public void setTax(Double tax) {
 		this.tax = tax;
 	}
 
 	@Column(name = "PRICE_TAX", precision = 18, scale = 8)
-	public Double getPriceTax()
-	{
+	public Double getPriceTax() {
 		return this.priceTax;
 	}
 
-	public void setPriceTax(Double priceTax )
-	{
+	public void setPriceTax(Double priceTax) {
 		this.priceTax = priceTax;
 	}
 
 	@Column(name = "AMOUNT", precision = 18, scale = 8)
-	public Double getAmount()
-	{
+	public Double getAmount() {
 		return this.amount;
 	}
 
-	public void setAmount(Double amount )
-	{
+	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
 
 	@Column(name = "TAX_AMOUNT", precision = 18, scale = 8)
-	public Double getTaxAmount()
-	{
+	public Double getTaxAmount() {
 		return this.taxAmount;
 	}
 
-	public void setTaxAmount(Double taxAmount )
-	{
+	public void setTaxAmount(Double taxAmount) {
 		this.taxAmount = taxAmount;
 	}
 
 	@Column(name = "PRICE_TAX_AMOUNT", precision = 18, scale = 8)
-	public Double getPriceTaxAmount()
-	{
+	public Double getPriceTaxAmount() {
 		return this.priceTaxAmount;
 	}
 
-	public void setPriceTaxAmount(Double priceTaxAmount )
-	{
+	public void setPriceTaxAmount(Double priceTaxAmount) {
 		this.priceTaxAmount = priceTaxAmount;
 	}
 
 	@Column(name = "TAX_NO")
-	public Integer getTaxNo()
-	{
+	public Integer getTaxNo() {
 		return this.taxNo;
 	}
 
-	public void setTaxNo(Integer taxNo )
-	{
+	public void setTaxNo(Integer taxNo) {
 		this.taxNo = taxNo;
 	}
 
 	@Column(name = "FACT_QTY")
-	public Integer getFactQty()
-	{
+	public Integer getFactQty() {
 		return this.factQty;
 	}
 
-	public void setFactQty(Integer factQty )
-	{
+	public void setFactQty(Integer factQty) {
 		this.factQty = factQty;
 	}
 
 	@Column(name = "DISCOUNT_NO", precision = 18, scale = 8)
-	public Double getDiscountNo()
-	{
+	public Double getDiscountNo() {
 		return this.discountNo;
 	}
 
-	public void setDiscountNo(Double discountNo )
-	{
+	public void setDiscountNo(Double discountNo) {
 		this.discountNo = discountNo;
 	}
 
