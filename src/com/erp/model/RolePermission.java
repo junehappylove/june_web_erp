@@ -1,6 +1,7 @@
 package com.erp.model;
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -22,8 +23,7 @@ import org.hibernate.annotations.DynamicUpdate;
 @Table(name = "ROLE_PERMISSION", catalog = "ERP")
 @DynamicUpdate(true)
 @DynamicInsert(true)
-public class RolePermission implements java.io.Serializable
-{
+public class RolePermission implements java.io.Serializable {
 	private static final long serialVersionUID = 1167900432405270755L;
 	private Integer id;
 	private Role role;
@@ -37,21 +37,18 @@ public class RolePermission implements java.io.Serializable
 	// Constructors
 
 	/** default constructor */
-	public RolePermission()
-	{
+	public RolePermission() {
 	}
 
 	/** minimal constructor */
-	public RolePermission(Role role, Permission permission)
-	{
+	public RolePermission(Role role, Permission permission) {
 		this.role = role;
 		this.permission = permission;
 	}
 
 	/** full constructor */
-	public RolePermission(Role role, Permission permission, String status, Date created,
-			Date lastmod, Integer creater, Integer modifyer)
-	{
+	public RolePermission(Role role, Permission permission, String status, Date created, Date lastmod, Integer creater,
+			Integer modifyer) {
 		this.role = role;
 		this.permission = permission;
 		this.status = status;
@@ -65,94 +62,78 @@ public class RolePermission implements java.io.Serializable
 	@Id
 	@GeneratedValue
 	@Column(name = "ID", unique = true, nullable = false)
-	public Integer getId()
-	{
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(Integer id )
-	{
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ROLE_ID", nullable = false)
-	public Role getRole()
-	{
+	public Role getRole() {
 		return this.role;
 	}
 
-	public void setRole(Role role )
-	{
+	public void setRole(Role role) {
 		this.role = role;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "PERMISSION_ID", nullable = false)
-	public Permission getPermission()
-	{
+	public Permission getPermission() {
 		return this.permission;
 	}
 
-	public void setPermission(Permission permission )
-	{
+	public void setPermission(Permission permission) {
 		this.permission = permission;
 	}
 
 	@Column(name = "STATUS", length = 1)
-	public String getStatus()
-	{
+	public String getStatus() {
 		return this.status;
 	}
 
-	public void setStatus(String status )
-	{
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "CREATED", length = 10)
-	public Date getCreated()
-	{
+	public Date getCreated() {
 		return this.created;
 	}
 
-	public void setCreated(Date created )
-	{
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "LASTMOD", length = 10)
-	public Date getLastmod()
-	{
+	public Date getLastmod() {
 		return this.lastmod;
 	}
 
-	public void setLastmod(Date lastmod )
-	{
+	public void setLastmod(Date lastmod) {
 		this.lastmod = lastmod;
 	}
 
 	@Column(name = "CREATER")
-	public Integer getCreater()
-	{
+	public Integer getCreater() {
 		return this.creater;
 	}
 
-	public void setCreater(Integer creater )
-	{
+	public void setCreater(Integer creater) {
 		this.creater = creater;
 	}
 
 	@Column(name = "MODIFYER")
-	public Integer getModifyer()
-	{
+	public Integer getModifyer() {
 		return this.modifyer;
 	}
 
-	public void setModifyer(Integer modifyer )
-	{
+	public void setModifyer(Integer modifyer) {
 		this.modifyer = modifyer;
 	}
 

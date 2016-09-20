@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -7,16 +7,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-  <head>
-    <base href="<%=basePath%>">
-    <title>客户订单管理</title>
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<jsp:include page="../../layout/script.jsp"></jsp:include>
-	<script type="text/javascript">
+<head>
+<base href="<%=basePath%>">
+<title>客户订单管理</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="This is my page">
+<jsp:include page="../../layout/script.jsp"></jsp:include>
+<script type="text/javascript">
 			var $dg;
 			var $grid;
 			$(function() {
@@ -171,42 +171,41 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				jqueryUtil.gradeSearch($dg,"#tbCompanySearchFm","jsp/company/companySearchDlg.jsp");
 			}
 		</script>
-  </head>
-  <body>
-      <div data-options="region:'center',border : false">
-  		<div class="well well-small" style="margin-left: 5px;margin-top: 5px">
-				<span class="badge">提示</span>
-				<p>
-					在此你可以对<span class="label-info"><strong>客户订单</strong></span>进行，新增，编辑，删除!
-				</p>
+</head>
+<body>
+	<div data-options="region:'center',border : false">
+		<div class="well well-small" style="margin-left: 5px; margin-top: 5px">
+			<span class="badge">提示</span>
+			<p>
+				在此你可以对<span class="label-info"><strong>客户订单</strong></span>进行，新增，编辑，删除!
+			</p>
 		</div>
-		<div id="tb" style="padding:2px 0">
+		<div id="tb" style="padding: 2px 0">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
-					<td style="padding-left:2px">
-						<shiro:hasPermission name="projectAdd">
-							<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="addRowsOpenDlg();">添加</a>
-						</shiro:hasPermission>
-						<shiro:hasPermission name="projectEdit">
-							<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="updRowsOpenDlg();">编辑</a>
-						</shiro:hasPermission>
-						<shiro:hasPermission name="projectDel">
-							<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="delRows();">删除</a>
-						</shiro:hasPermission>
-					</td>
-					<td style="padding-left:2px">
-						<input id="searchbox" type="text"/>
-					</td>
-					<td style="padding-left:2px">
-						<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="javascript:void(0);">高级查询</a>
-					</td>
+					<td style="padding-left: 2px"><shiro:hasPermission
+							name="projectAdd">
+							<a href="javascript:void(0);" class="easyui-linkbutton"
+								iconCls="icon-add" plain="true" onclick="addRowsOpenDlg();">添加</a>
+						</shiro:hasPermission> <shiro:hasPermission name="projectEdit">
+							<a href="javascript:void(0);" class="easyui-linkbutton"
+								iconCls="icon-edit" plain="true" onclick="updRowsOpenDlg();">编辑</a>
+						</shiro:hasPermission> <shiro:hasPermission name="projectDel">
+							<a href="javascript:void(0);" class="easyui-linkbutton"
+								iconCls="icon-remove" plain="true" onclick="delRows();">删除</a>
+						</shiro:hasPermission></td>
+					<td style="padding-left: 2px"><input id="searchbox"
+						type="text" /></td>
+					<td style="padding-left: 2px"><a href="javascript:void(0);"
+						class="easyui-linkbutton" iconCls="icon-search" plain="true"
+						onclick="javascript:void(0);">高级查询</a></td>
 				</tr>
 			</table>
 		</div>
 		<div id="mm">
-				<div name="myid">订单编码</div>
+			<div name="myid">订单编码</div>
 		</div>
 		<table id="dg" title="客户订单管理"></table>
-  	</div>	
-  </body>
+	</div>
+</body>
 </html>

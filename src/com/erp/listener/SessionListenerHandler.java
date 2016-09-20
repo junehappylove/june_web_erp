@@ -17,7 +17,7 @@ import net.sf.ehcache.CacheManager;
  * @author iscas
  *
  */
-public class SessionListenerHandler implements HttpSessionListener, HttpSessionBindingListener, HttpSession{
+public class SessionListenerHandler implements HttpSessionListener, HttpSessionBindingListener, HttpSession {
 
 	public void sessionCreated(HttpSessionEvent se) {
 

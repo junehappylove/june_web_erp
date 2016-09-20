@@ -1,7 +1,6 @@
 package com.erp.viewModel;
 
-public class TreeModel
-{
+public class TreeModel {
 	private String id;
 	private String pid;
 	private String name;
@@ -9,62 +8,61 @@ public class TreeModel
 	private String state;
 	private Integer permissionId;
 	private Attributes attributes;
-	
-	public Attributes getAttributes()
-	{
+
+	public Attributes getAttributes() {
 		return attributes;
 	}
-	public void setAttributes(Attributes attributes )
-	{
+
+	public void setAttributes(Attributes attributes) {
 		this.attributes = attributes;
 	}
-	public Integer getPermissionId()
-	{
+
+	public Integer getPermissionId() {
 		return permissionId;
 	}
-	public void setPermissionId(Integer permissionId )
-	{
+
+	public void setPermissionId(Integer permissionId) {
 		this.permissionId = permissionId;
 	}
-	public String getIconCls()
-	{
+
+	public String getIconCls() {
 		return iconCls;
 	}
-	public void setIconCls(String iconCls )
-	{
+
+	public void setIconCls(String iconCls) {
 		this.iconCls = iconCls;
 	}
-	public String getState()
-	{
+
+	public String getState() {
 		return state;
 	}
-	public void setState(String state )
-	{
+
+	public void setState(String state) {
 		this.state = state;
 	}
-	public String getId()
-	{
+
+	public String getId() {
 		return id;
 	}
-	public void setId(String id )
-	{
+
+	public void setId(String id) {
 		this.id = id;
 	}
-	public String getPid()
-	{
+
+	public String getPid() {
 		return pid;
 	}
-	public void setPid(String pid )
-	{
+
+	public void setPid(String pid) {
 		this.pid = pid;
 	}
-	public String getName()
-	{
+
+	public String getName() {
 		return name;
 	}
-	public void setName(String name )
-	{
+
+	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 }

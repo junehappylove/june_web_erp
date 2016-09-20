@@ -1,6 +1,7 @@
 package com.erp.model;
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,8 +20,7 @@ import org.hibernate.annotations.DynamicUpdate;
 @Table(name = "LOG", catalog = "ERP")
 @DynamicUpdate(true)
 @DynamicInsert(true)
-public class Log implements java.io.Serializable
-{
+public class Log implements java.io.Serializable {
 	private static final long serialVersionUID = 1309582605928485828L;
 	private Integer logId;
 	private Integer userId;
@@ -37,14 +37,12 @@ public class Log implements java.io.Serializable
 	// Constructors
 
 	/** default constructor */
-	public Log()
-	{
+	public Log() {
 	}
 
 	/** full constructor */
-	public Log(Integer userId, String name, Date logDate, Integer type, String mac, String ip,
-			Integer objectType, String objectId, String eventName, String eventRecord)
-	{
+	public Log(Integer userId, String name, Date logDate, Integer type, String mac, String ip, Integer objectType,
+			String objectId, String eventName, String eventRecord) {
 		this.userId = userId;
 		this.name = name;
 		this.logDate = logDate;
@@ -61,124 +59,102 @@ public class Log implements java.io.Serializable
 	@Id
 	@GeneratedValue
 	@Column(name = "LOG_ID", unique = true, nullable = false)
-	public Integer getLogId()
-	{
+	public Integer getLogId() {
 		return this.logId;
 	}
 
-	public void setLogId(Integer logId )
-	{
+	public void setLogId(Integer logId) {
 		this.logId = logId;
 	}
 
 	@Column(name = "USER_ID")
-	public Integer getUserId()
-	{
+	public Integer getUserId() {
 		return this.userId;
 	}
 
-	public void setUserId(Integer userId )
-	{
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 
 	@Column(name = "NAME", length = 20)
-	public String getName()
-	{
+	public String getName() {
 		return this.name;
 	}
 
-	public void setName(String name )
-	{
+	public void setName(String name) {
 		this.name = name;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "LOG_DATE", length = 10)
-	public Date getLogDate()
-	{
+	public Date getLogDate() {
 		return this.logDate;
 	}
 
-	public void setLogDate(Date logDate )
-	{
+	public void setLogDate(Date logDate) {
 		this.logDate = logDate;
 	}
 
 	@Column(name = "TYPE")
-	public Integer getType()
-	{
+	public Integer getType() {
 		return this.type;
 	}
 
-	public void setType(Integer type )
-	{
+	public void setType(Integer type) {
 		this.type = type;
 	}
 
 	@Column(name = "MAC", length = 20)
-	public String getMac()
-	{
+	public String getMac() {
 		return this.mac;
 	}
 
-	public void setMac(String mac )
-	{
+	public void setMac(String mac) {
 		this.mac = mac;
 	}
 
 	@Column(name = "IP", length = 20)
-	public String getIp()
-	{
+	public String getIp() {
 		return this.ip;
 	}
 
-	public void setIp(String ip )
-	{
+	public void setIp(String ip) {
 		this.ip = ip;
 	}
 
 	@Column(name = "OBJECT_TYPE")
-	public Integer getObjectType()
-	{
+	public Integer getObjectType() {
 		return this.objectType;
 	}
 
-	public void setObjectType(Integer objectType )
-	{
+	public void setObjectType(Integer objectType) {
 		this.objectType = objectType;
 	}
 
 	@Column(name = "OBJECT_ID", length = 100)
-	public String getObjectId()
-	{
+	public String getObjectId() {
 		return this.objectId;
 	}
 
-	public void setObjectId(String objectId )
-	{
+	public void setObjectId(String objectId) {
 		this.objectId = objectId;
 	}
 
 	@Column(name = "EVENT_NAME", length = 100)
-	public String getEventName()
-	{
+	public String getEventName() {
 		return this.eventName;
 	}
 
-	public void setEventName(String eventName )
-	{
+	public void setEventName(String eventName) {
 		this.eventName = eventName;
 	}
 
 	@Column(name = "EVENT_RECORD", length = 500)
-	public String getEventRecord()
-	{
+	public String getEventRecord() {
 		return this.eventRecord;
 	}
 
-	public void setEventRecord(String eventRecord )
-	{
+	public void setEventRecord(String eventRecord) {
 		this.eventRecord = eventRecord;
 	}
 

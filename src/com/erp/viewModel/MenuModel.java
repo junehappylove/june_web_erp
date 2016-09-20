@@ -3,61 +3,59 @@ package com.erp.viewModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuModel
-{
+public class MenuModel {
 	private String id;
 	private String pid;
 	private String name;
 	private String iconCls;
 	private String url;
-	private List<MenuModel> child=new ArrayList<MenuModel>();
-	
-	public String getId()
-	{
+	private List<MenuModel> child = new ArrayList<MenuModel>();
+
+	public String getId() {
 		return id;
 	}
-	public void setId(String id )
-	{
+
+	public void setId(String id) {
 		this.id = id;
 	}
-	public String getPid()
-	{
+
+	public String getPid() {
 		return pid;
 	}
-	public void setPid(String pid )
-	{
+
+	public void setPid(String pid) {
 		this.pid = pid;
 	}
-	public String getName()
-	{
+
+	public String getName() {
 		return name;
 	}
-	public void setName(String name )
-	{
+
+	public void setName(String name) {
 		this.name = name;
 	}
-	public String getIconCls()
-	{
+
+	public String getIconCls() {
 		return iconCls;
 	}
-	public void setIconCls(String iconCls )
-	{
+
+	public void setIconCls(String iconCls) {
 		this.iconCls = iconCls;
 	}
-	public String getUrl()
-	{
+
+	public String getUrl() {
 		return url;
 	}
-	public void setUrl(String url )
-	{
+
+	public void setUrl(String url) {
 		this.url = url;
 	}
-	public List<MenuModel> getChild()
-	{
+
+	public List<MenuModel> getChild() {
 		return child;
 	}
-	public void setChild(List<MenuModel> child )
-	{
+
+	public void setChild(List<MenuModel> child) {
 		this.child = child;
 	}
 }

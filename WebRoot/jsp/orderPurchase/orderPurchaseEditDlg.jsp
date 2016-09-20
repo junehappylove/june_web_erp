@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <script type="text/javascript">
 	var $dg;
 	var $cb;
@@ -605,167 +605,218 @@
 	}
 </script>
 <style>
-	.easyui-textbox{
-		height: 18px;
-		width: 170px;
-		line-height: 16px;
-	    /*border-radius: 3px 3px 3px 3px;*/
-	    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-	    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
-	}
-	
-	textarea:focus, input[type="text"]:focus{
-	    border-color: rgba(82, 168, 236, 0.8);
-	    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
-	    outline: 0 none;
-		}
-		
-	
-	fieldset {
-	    border: 0 none;
-	    margin: 0;
-	    padding: 0;
-	}
-	legend {
-	    -moz-border-bottom-colors: none;
-	    -moz-border-left-colors: none;
-	    -moz-border-right-colors: none;
-	    -moz-border-top-colors: none;
-	    border-color: #E5E5E5;
-	    border-image: none;
-	    border-style: none none solid;
-	    border-width: 0 0 1px;
-	    color: #999999;
-	    line-height: 20px;
-	    display: block;
-	    margin-bottom: 10px;
-	    padding: 0;
-	    width: 100%;
-	}
-	input, textarea {
-	    font-weight: normal;
-	}
-	.table {
-	    background-color: transparent;
-	    border-collapse: collapse;
-	    border-spacing: 0;
-	    max-width: 100%;
-	}
-	
-	.table{
-		text-align:left;
-		padding: 6px 6px 6px 6px;
-	}
-	.table th{
-		text-align:left;
-		padding: 6px 6px 6px 6px;
-	}
-	.table td{
-		text-align:left;
-		padding: 6px 6px 6px 6px;
-	}
+.easyui-textbox {
+	height: 18px;
+	width: 170px;
+	line-height: 16px;
+	/*border-radius: 3px 3px 3px 3px;*/
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+	transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+
+textarea:focus, input[type="text"]:focus {
+	border-color: rgba(82, 168, 236, 0.8);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px
+		rgba(82, 168, 236, 0.6);
+	outline: 0 none;
+}
+
+fieldset {
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+}
+
+legend {
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	border-color: #E5E5E5;
+	border-image: none;
+	border-style: none none solid;
+	border-width: 0 0 1px;
+	color: #999999;
+	line-height: 20px;
+	display: block;
+	margin-bottom: 10px;
+	padding: 0;
+	width: 100%;
+}
+
+input, textarea {
+	font-weight: normal;
+}
+
+.table {
+	background-color: transparent;
+	border-collapse: collapse;
+	border-spacing: 0;
+	max-width: 100%;
+}
+
+.table {
+	text-align: left;
+	padding: 6px 6px 6px 6px;
+}
+
+.table th {
+	text-align: left;
+	padding: 6px 6px 6px 6px;
+}
+
+.table td {
+	text-align: left;
+	padding: 6px 6px 6px 6px;
+}
 </style>
 <div class="easyui-layout" data-options="fit:true,border:false">
 	<div data-options="region:'center',border:false" title="">
-	<input name="keyDown" id="keyDown"  type="hidden" value="keyDown"/>
-	<input name="tempId" id="tempId"  type="hidden" value="<%=request.getParameter("tempId")==null?"":request.getParameter("tempId")%>"/>
+		<input name="keyDown" id="keyDown" type="hidden" value="keyDown" /> <input
+			name="tempId" id="tempId" type="hidden"
+			value="<%=request.getParameter("tempId")==null?"":request.getParameter("tempId")%>" />
 		<form id="form" method="post">
-				<div title="基本资料" data-options="iconCls:'icon-cstbase'" style="padding:10px">
-						<fieldset>
-							<legend><img src="extend/fromedit.png" style="margin-bottom: -3px;"/>基本资料编辑</legend>
-							<input name="orderPurchaseId" id="orderPurchaseId"  type="hidden"/>
-							<input name="created" id="created"  type="hidden"/>
-							<input name="creater" id="creater"  type="hidden"/>
-							<input name="status" id="status"  type="hidden"/>
-							<input name="inserted" id="inserted"  type="hidden"/>
-							<input name="updated" id="updated"  type="hidden"/>
-							<input name="deleted" id="deleted"  type="hidden"/>
-							 <table class="table">
-								 <tr>
-								    <th>采购单号</th>
-									<td><input name="myid" id="myid" placeholder="请输入采购单号" class="easyui-textbox easyui-validatebox" data-options="required:true" type="text"/></td>
-									<th>采购日期</th>
-									<td><input name="setupDate" id="setupDate" type="text"  class="easyui-textbox easyui-datetimebox" data-options="required:true"/></td>
-									<th>采购类型</th>
-									<td><input name="classId" id="classId" type="text" class="easyui-textbox easyui-validatebox" /><input name="className" id="className" type="hidden" /></td>
-									<th>批号</th>
-									<td><input id="batchId" name="batchId" type="text" class="easyui-textbox easyui-validatebox" /><input id="batchNo" name="batchNo" type="hidden"/></td>
-								 </tr>
-								 <tr>
-								    <th>供应商编码</th>
-									<td><input name="suplierId" id="suplierId" type="text" class="easyui-textbox easyui-validatebox" /><input name="suplierMyid" id="suplierMyid" type="hidden"/></td>
-								    <th>供应商名称</th>
-									<td><input id="suplierName" name="suplierName" type="text" class="easyui-textbox easyui-validatebox" style="background-color:#cccccc;"  readonly/></td>
-									<th>联系人</th>
-									<td><input id="suplierContact" name="suplierContact" type="text" class="easyui-textbox easyui-validatebox"/><img src="extend/area.png" style="margin-left:2px;margin-bottom: -5px;cursor: pointer;" onclick="addAreaOpenDlg();"/></td>
-									<th>电话</th>
-									<td><input id="suplierTel" name="suplierTel" type="text" class="easyui-textbox easyui-validatebox" style="background-color:#cccccc;"  readonly/></td>
-								 </tr>
-								  <tr>
-									 <th>项目名称</th>
-									<td><input id="projectId" name="projectId" type="text" class="easyui-textbox easyui-validatebox"/><input name="projectName" id="projectName" type="hidden" /></td>
-									<th>采购部门</th>
-									<td><input id="buyerOrganizationId" name="buyerOrganizationId" type="text" class="easyui-textbox easyui-validatebox"/><input id="buyerOrganizationName" name="buyerOrganizationName" type="hidden"/><img src="extend/area.png" style="margin-left:2px;margin-bottom: -5px;cursor: pointer;" onclick="addAreaOpenDlg();"/></td>
-									<th>币别</th>
-									<td><input id="currencyId" name="currencyId" type="text" class="easyui-textbox easyui-validatebox"/><input id="currencyName" name="currencyName" type="hidden"/></td>
-									 <th>仓库名称</th>
-									<td><input id="warehouseId" name="warehouseId" type="text" class="easyui-textbox easyui-validatebox"/><input name="warehouseName" id="warehouseName" type="hidden" /></td>
-								 </tr>
-								  <tr>
-									<th>预计交货日</th>
-									<td><input id="estimatedDelivery" name="estimatedDelivery" type="text" class="easyui-textbox easyui-datebox"/></td>
-									<th>交货方式</th>
-									<td><input id="deliveryMode" name="deliveryMode" type="text" class="easyui-textbox easyui-validatebox"/><input id="deliveryModeName" name="deliveryModeName" type="hidden"/></td>
-									 <th>扣税类别</th>
-									<td><select id="deductionTax" class="easyui-combobox" name="deductionTax" style="width:171px;">
-											<option value="Y">含税</option>
-											<option value="N">未税</option>
-										</select>
-									</td>
-									<th>供应商订单号</th>
-									<td><input id="suplierOrderNo" name="suplierOrderNo" type="text" class="easyui-textbox easyui-validatebox"/></td>
-								 </tr>
-								  <tr>
-									<th>合计未税价</th>
-									<td><input id="amount" name="amount" type="text" class="easyui-textbox" style="background-color:#cccccc;"  readonly/></td>
-									 <th>合计税金</th>
-									<td><input id="taxAmount" name="taxAmount" type="text" class="easyui-textbox" style="background-color:#cccccc;"  readonly/></td>
-									<th>合计总价</th>
-									<td><input id="totalAmount" name="totalAmount" type="text" class="easyui-textbox" style="background-color:#cccccc;"  readonly/></td>
-									<th>订金</th>
-									<td><input id="advancePayment" name="advancePayment" type="text" class="easyui-textbox"/></td>
-								 </tr>
-							   </table>
-						</fieldset>
-				</div>
-							<table id="dg"></table>
-							<div id="tb" style="padding:2px 0">
-								<table cellpadding="0" cellspacing="0">
-									<tr>
-										<td style="padding-left:2px">
-											<shiro:hasPermission name="cstConEdit">
-												<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="addRows();">添加</a>
-												<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editRows();">编辑</a>
-												<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-end" plain="true" onclick="endEdit();">结束编辑</a>
-												<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="removeRows();">删除</a>
-											</shiro:hasPermission>
-										</td>
-									</tr>
-								</table>
-							</div>
+			<div title="基本资料" data-options="iconCls:'icon-cstbase'"
+				style="padding: 10px">
+				<fieldset>
+					<legend>
+						<img src="extend/fromedit.png" style="margin-bottom: -3px;" />基本资料编辑
+					</legend>
+					<input name="orderPurchaseId" id="orderPurchaseId" type="hidden" />
+					<input name="created" id="created" type="hidden" /> <input
+						name="creater" id="creater" type="hidden" /> <input name="status"
+						id="status" type="hidden" /> <input name="inserted" id="inserted"
+						type="hidden" /> <input name="updated" id="updated" type="hidden" />
+					<input name="deleted" id="deleted" type="hidden" />
+					<table class="table">
+						<tr>
+							<th>采购单号</th>
+							<td><input name="myid" id="myid" placeholder="请输入采购单号"
+								class="easyui-textbox easyui-validatebox"
+								data-options="required:true" type="text" /></td>
+							<th>采购日期</th>
+							<td><input name="setupDate" id="setupDate" type="text"
+								class="easyui-textbox easyui-datetimebox"
+								data-options="required:true" /></td>
+							<th>采购类型</th>
+							<td><input name="classId" id="classId" type="text"
+								class="easyui-textbox easyui-validatebox" /><input
+								name="className" id="className" type="hidden" /></td>
+							<th>批号</th>
+							<td><input id="batchId" name="batchId" type="text"
+								class="easyui-textbox easyui-validatebox" /><input id="batchNo"
+								name="batchNo" type="hidden" /></td>
+						</tr>
+						<tr>
+							<th>供应商编码</th>
+							<td><input name="suplierId" id="suplierId" type="text"
+								class="easyui-textbox easyui-validatebox" /><input
+								name="suplierMyid" id="suplierMyid" type="hidden" /></td>
+							<th>供应商名称</th>
+							<td><input id="suplierName" name="suplierName" type="text"
+								class="easyui-textbox easyui-validatebox"
+								style="background-color: #cccccc;" readonly /></td>
+							<th>联系人</th>
+							<td><input id="suplierContact" name="suplierContact"
+								type="text" class="easyui-textbox easyui-validatebox" /><img
+								src="extend/area.png"
+								style="margin-left: 2px; margin-bottom: -5px; cursor: pointer;"
+								onclick="addAreaOpenDlg();" /></td>
+							<th>电话</th>
+							<td><input id="suplierTel" name="suplierTel" type="text"
+								class="easyui-textbox easyui-validatebox"
+								style="background-color: #cccccc;" readonly /></td>
+						</tr>
+						<tr>
+							<th>项目名称</th>
+							<td><input id="projectId" name="projectId" type="text"
+								class="easyui-textbox easyui-validatebox" /><input
+								name="projectName" id="projectName" type="hidden" /></td>
+							<th>采购部门</th>
+							<td><input id="buyerOrganizationId"
+								name="buyerOrganizationId" type="text"
+								class="easyui-textbox easyui-validatebox" /><input
+								id="buyerOrganizationName" name="buyerOrganizationName"
+								type="hidden" /><img src="extend/area.png"
+								style="margin-left: 2px; margin-bottom: -5px; cursor: pointer;"
+								onclick="addAreaOpenDlg();" /></td>
+							<th>币别</th>
+							<td><input id="currencyId" name="currencyId" type="text"
+								class="easyui-textbox easyui-validatebox" /><input
+								id="currencyName" name="currencyName" type="hidden" /></td>
+							<th>仓库名称</th>
+							<td><input id="warehouseId" name="warehouseId" type="text"
+								class="easyui-textbox easyui-validatebox" /><input
+								name="warehouseName" id="warehouseName" type="hidden" /></td>
+						</tr>
+						<tr>
+							<th>预计交货日</th>
+							<td><input id="estimatedDelivery" name="estimatedDelivery"
+								type="text" class="easyui-textbox easyui-datebox" /></td>
+							<th>交货方式</th>
+							<td><input id="deliveryMode" name="deliveryMode" type="text"
+								class="easyui-textbox easyui-validatebox" /><input
+								id="deliveryModeName" name="deliveryModeName" type="hidden" /></td>
+							<th>扣税类别</th>
+							<td><select id="deductionTax" class="easyui-combobox"
+								name="deductionTax" style="width: 171px;">
+									<option value="Y">含税</option>
+									<option value="N">未税</option>
+							</select></td>
+							<th>供应商订单号</th>
+							<td><input id="suplierOrderNo" name="suplierOrderNo"
+								type="text" class="easyui-textbox easyui-validatebox" /></td>
+						</tr>
+						<tr>
+							<th>合计未税价</th>
+							<td><input id="amount" name="amount" type="text"
+								class="easyui-textbox" style="background-color: #cccccc;"
+								readonly /></td>
+							<th>合计税金</th>
+							<td><input id="taxAmount" name="taxAmount" type="text"
+								class="easyui-textbox" style="background-color: #cccccc;"
+								readonly /></td>
+							<th>合计总价</th>
+							<td><input id="totalAmount" name="totalAmount" type="text"
+								class="easyui-textbox" style="background-color: #cccccc;"
+								readonly /></td>
+							<th>订金</th>
+							<td><input id="advancePayment" name="advancePayment"
+								type="text" class="easyui-textbox" /></td>
+						</tr>
+					</table>
+				</fieldset>
+			</div>
+			<table id="dg"></table>
+			<div id="tb" style="padding: 2px 0">
+				<table cellpadding="0" cellspacing="0">
+					<tr>
+						<td style="padding-left: 2px"><shiro:hasPermission
+								name="cstConEdit">
+								<a href="javascript:void(0);" class="easyui-linkbutton"
+									iconCls="icon-add" plain="true" onclick="addRows();">添加</a>
+								<a href="javascript:void(0);" class="easyui-linkbutton"
+									iconCls="icon-edit" plain="true" onclick="editRows();">编辑</a>
+								<a href="javascript:void(0);" class="easyui-linkbutton"
+									iconCls="icon-end" plain="true" onclick="endEdit();">结束编辑</a>
+								<a href="javascript:void(0);" class="easyui-linkbutton"
+									iconCls="icon-remove" plain="true" onclick="removeRows();">删除</a>
+							</shiro:hasPermission></td>
+					</tr>
+				</table>
+			</div>
 		</form>
-		<div id="tb2" style="padding:2px 0">
+		<div id="tb2" style="padding: 2px 0">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
-					<td style="padding-left:2px">
-						<input id="searchbox" type="text"/>
-					</td>
+					<td style="padding-left: 2px"><input id="searchbox"
+						type="text" /></td>
 				</tr>
 			</table>
 		</div>
 		<div id="mm">
-				<div data-options="name:'name'">供应商名称</div>
-				<div data-options="name:'myid'">供应商编码</div>
+			<div data-options="name:'name'">供应商名称</div>
+			<div data-options="name:'myid'">供应商编码</div>
 		</div>
 	</div>
 </div>

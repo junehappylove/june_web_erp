@@ -19,33 +19,31 @@ import com.erp.model.CompanyInfo;
 import com.erp.service.ExcelService;
 import com.erp.util.ExcelUtil;
 import com.erp.util.FileUtil;
+
 @Namespace("/excel")
 @Action(value = "excelAction")
-public class ExcelAction extends BaseAction
-{
+public class ExcelAction extends BaseAction {
 	private static final long serialVersionUID = 6711372422886609823L;
 	private ExcelService excelService;
 	private String isCheckedIds;
-	
-	public String getIsCheckedIds()
-	{
+
+	public String getIsCheckedIds() {
 		return isCheckedIds;
 	}
-	public void setIsCheckedIds(String isCheckedIds )
-	{
+
+	public void setIsCheckedIds(String isCheckedIds) {
 		this.isCheckedIds = isCheckedIds;
 	}
+
 	@Autowired
-	public void setExcelService(ExcelService excelService )
-	{
+	public void setExcelService(ExcelService excelService) {
 		this.excelService = excelService;
 	}
-	
-	public String CompanyInfoExcelExport() throws Exception
-	{
+
+	public String CompanyInfoExcelExport() throws Exception {
 		SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
 		String excelName = format.format(new Date());
-		String path = "CompanyInfo-"+excelName+".xls";
+		String path = "CompanyInfo-" + excelName + ".xls";
 		String fegefu = File.separator;
 		HttpServletRequest request = ServletActionContext.getRequest();
 		HttpServletResponse response = ServletActionContext.getResponse();
@@ -58,7 +56,7 @@ public class ExcelAction extends BaseAction
 			e.printStackTrace();
 		}
 		List<CompanyInfo> list = excelService.findExcelExportList(isCheckedIds, CompanyInfo.class);
-		ExcelUtil<CompanyInfo> util=new ExcelUtil<CompanyInfo>(CompanyInfo.class);
+		ExcelUtil<CompanyInfo> util = new ExcelUtil<CompanyInfo>(CompanyInfo.class);
 		util.exportExcel(list, "Sheet", 60000, out);
 		FileUtil.downFile(path, response, allPath);
 		return null;

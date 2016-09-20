@@ -22,8 +22,7 @@ import com.erp.util.ExcelVOAttribute;
 @Table(name = "COMPANY_INFO", catalog = "ERP")
 @DynamicUpdate(true)
 @DynamicInsert(true)
-public class CompanyInfo implements java.io.Serializable
-{
+public class CompanyInfo implements java.io.Serializable {
 	private static final long serialVersionUID = -5610203466348081933L;
 	private Integer companyId;
 	@ExcelVOAttribute(name = "公司名称", column = "A", isExport = true, prompt = "这是公司名称!")
@@ -54,23 +53,19 @@ public class CompanyInfo implements java.io.Serializable
 	// Constructors
 
 	/** default constructor */
-	public CompanyInfo()
-	{
+	public CompanyInfo() {
 	}
 
 	/** minimal constructor */
-	public CompanyInfo(String status, Date created)
-	{
+	public CompanyInfo(String status, Date created) {
 		this.status = status;
 		this.created = created;
 	}
 
 	/** full constructor */
-	public CompanyInfo(String name, String tel, String fax, String address, String zip,
-			String email, String contact, String status, Date created, Date lastmod,
-			String manager, String bank, String bankaccount, String description, Integer creater,
-			Integer modifyer)
-	{
+	public CompanyInfo(String name, String tel, String fax, String address, String zip, String email, String contact,
+			String status, Date created, Date lastmod, String manager, String bank, String bankaccount,
+			String description, Integer creater, Integer modifyer) {
 		this.name = name;
 		this.tel = tel;
 		this.fax = fax;
@@ -93,191 +88,157 @@ public class CompanyInfo implements java.io.Serializable
 	@Id
 	@GeneratedValue
 	@Column(name = "COMPANY_ID", unique = true, nullable = false)
-	public Integer getCompanyId()
-	{
+	public Integer getCompanyId() {
 		return this.companyId;
 	}
 
-	public void setCompanyId(Integer companyId )
-	{
+	public void setCompanyId(Integer companyId) {
 		this.companyId = companyId;
 	}
 
 	@Column(name = "NAME", length = 100)
-	public String getName()
-	{
+	public String getName() {
 		return this.name;
 	}
 
-	public void setName(String name )
-	{
+	public void setName(String name) {
 		this.name = name;
 	}
 
 	@Column(name = "TEL", length = 50)
-	public String getTel()
-	{
+	public String getTel() {
 		return this.tel;
 	}
 
-	public void setTel(String tel )
-	{
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 
 	@Column(name = "FAX", length = 50)
-	public String getFax()
-	{
+	public String getFax() {
 		return this.fax;
 	}
 
-	public void setFax(String fax )
-	{
+	public void setFax(String fax) {
 		this.fax = fax;
 	}
 
 	@Column(name = "ADDRESS")
-	public String getAddress()
-	{
+	public String getAddress() {
 		return this.address;
 	}
 
-	public void setAddress(String address )
-	{
+	public void setAddress(String address) {
 		this.address = address;
 	}
 
 	@Column(name = "ZIP", length = 100)
-	public String getZip()
-	{
+	public String getZip() {
 		return this.zip;
 	}
 
-	public void setZip(String zip )
-	{
+	public void setZip(String zip) {
 		this.zip = zip;
 	}
 
 	@Column(name = "EMAIL", length = 100)
-	public String getEmail()
-	{
+	public String getEmail() {
 		return this.email;
 	}
 
-	public void setEmail(String email )
-	{
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
 	@Column(name = "CONTACT", length = 100)
-	public String getContact()
-	{
+	public String getContact() {
 		return this.contact;
 	}
 
-	public void setContact(String contact )
-	{
+	public void setContact(String contact) {
 		this.contact = contact;
 	}
 
 	@Column(name = "STATUS", nullable = false, length = 1)
-	public String getStatus()
-	{
+	public String getStatus() {
 		return this.status;
 	}
 
-	public void setStatus(String status )
-	{
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "CREATED", nullable = false, length = 10)
-	public Date getCreated()
-	{
+	public Date getCreated() {
 		return this.created;
 	}
 
-	public void setCreated(Date created )
-	{
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "LASTMOD", length = 10)
-	public Date getLastmod()
-	{
+	public Date getLastmod() {
 		return this.lastmod;
 	}
 
-	public void setLastmod(Date lastmod )
-	{
+	public void setLastmod(Date lastmod) {
 		this.lastmod = lastmod;
 	}
 
 	@Column(name = "MANAGER", length = 100)
-	public String getManager()
-	{
+	public String getManager() {
 		return this.manager;
 	}
 
-	public void setManager(String manager )
-	{
+	public void setManager(String manager) {
 		this.manager = manager;
 	}
 
 	@Column(name = "BANK", length = 100)
-	public String getBank()
-	{
+	public String getBank() {
 		return this.bank;
 	}
 
-	public void setBank(String bank )
-	{
+	public void setBank(String bank) {
 		this.bank = bank;
 	}
 
 	@Column(name = "BANKACCOUNT", length = 100)
-	public String getBankaccount()
-	{
+	public String getBankaccount() {
 		return this.bankaccount;
 	}
 
-	public void setBankaccount(String bankaccount )
-	{
+	public void setBankaccount(String bankaccount) {
 		this.bankaccount = bankaccount;
 	}
 
 	@Column(name = "DESCRIPTION", length = 2000)
-	public String getDescription()
-	{
+	public String getDescription() {
 		return this.description;
 	}
 
-	public void setDescription(String description )
-	{
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
 	@Column(name = "CREATER")
-	public Integer getCreater()
-	{
+	public Integer getCreater() {
 		return this.creater;
 	}
 
-	public void setCreater(Integer creater )
-	{
+	public void setCreater(Integer creater) {
 		this.creater = creater;
 	}
 
 	@Column(name = "MODIFYER")
-	public Integer getModifyer()
-	{
+	public Integer getModifyer() {
 		return this.modifyer;
 	}
 
-	public void setModifyer(Integer modifyer )
-	{
+	public void setModifyer(Integer modifyer) {
 		this.modifyer = modifyer;
 	}
 

@@ -47,9 +47,11 @@
 		});
 	}
 </script>
-<div style="position: absolute; right: 0px; bottom: 0px; ">
-	<a href="javascript:void(0);" class="easyui-menubutton" menu="#layout_north_kzmbMenu" iconCls="icon-help">控制面板</a> 
-	<a href="javascript:void(0);" class="easyui-menubutton" menu="#layout_north_zxMenu" iconCls="icon-logout">注销</a>
+<div style="position: absolute; right: 0px; bottom: 0px;">
+	<a href="javascript:void(0);" class="easyui-menubutton"
+		menu="#layout_north_kzmbMenu" iconCls="icon-help">控制面板</a> <a
+		href="javascript:void(0);" class="easyui-menubutton"
+		menu="#layout_north_zxMenu" iconCls="icon-logout">注销</a>
 </div>
 <div id="layout_north_kzmbMenu" style="width: 100px; display: none;">
 	<div onclick="showUserInfo();">个人信息</div>

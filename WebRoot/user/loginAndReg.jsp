@@ -204,7 +204,8 @@
 		}
 	});
 </script>
-<div id="loginAndRegDialog" modal="true" title="系统登录" closable="false" style="width:250px;height:210px;display: none;overflow: hidden;">
+<div id="loginAndRegDialog" modal="true" title="系统登录" closable="false"
+	style="width: 250px; height: 210px; display: none; overflow: hidden;">
 	<div id="loginTabs" fit="true" border="false">
 		<div title="输入方式" style="overflow: hidden;">
 			<div class="info">
@@ -216,13 +217,14 @@
 					<table class="tableForm" style="margin: 5px;">
 						<tr>
 							<th>登陆名</th>
-							<td><input name="cname" class="easyui-validatebox" required="true" missingMessage="请填写登录名称" value="admin" />
-							</td>
+							<td><input name="cname" class="easyui-validatebox"
+								required="true" missingMessage="请填写登录名称" value="admin" /></td>
 						</tr>
 						<tr>
 							<th>密码</th>
-							<td><input name="cpwd" type="password" class="easyui-validatebox" required="true" missingMessage="请填写登录密码" value="admin" />
-							</td>
+							<td><input name="cpwd" type="password"
+								class="easyui-validatebox" required="true"
+								missingMessage="请填写登录密码" value="admin" /></td>
 						</tr>
 					</table>
 				</form>
@@ -238,11 +240,15 @@
 					<table class="tableForm">
 						<tr>
 							<th>登录名</th>
-							<td><select id="loginDatagridName" name="cname" style="display: none;width:157px;" required="true" missingMessage="请检索登录用户"></select></td>
+							<td><select id="loginDatagridName" name="cname"
+								style="display: none; width: 157px;" required="true"
+								missingMessage="请检索登录用户"></select></td>
 						</tr>
 						<tr>
 							<th>密码</th>
-							<td><input name="cpwd" type="password" class="easyui-validatebox" required="true" missingMessage="请填写登录密码" value="" /></td>
+							<td><input name="cpwd" type="password"
+								class="easyui-validatebox" required="true"
+								missingMessage="请填写登录密码" value="" /></td>
 						</tr>
 					</table>
 				</form>
@@ -258,13 +264,13 @@
 					<table class="tableForm">
 						<tr>
 							<th style="width: 50px;">登录名</th>
-							<td><select id="loginComboboxName" name="cname" style="display: none;width:157px;"></select>
-							</td>
+							<td><select id="loginComboboxName" name="cname"
+								style="display: none; width: 157px;"></select></td>
 						</tr>
 						<tr>
 							<th>密码</th>
-							<td><input name="cpwd" type="password" class="easyui-validatebox" required="true" value="" />
-							</td>
+							<td><input name="cpwd" type="password"
+								class="easyui-validatebox" required="true" value="" /></td>
 						</tr>
 					</table>
 				</form>
@@ -273,20 +279,25 @@
 	</div>
 </div>
 
-<div id="regDialog" style="width:250px;display: none;padding: 5px;" align="center">
+<div id="regDialog" style="width: 250px; display: none; padding: 5px;"
+	align="center">
 	<form id="regForm" method="post">
 		<table class="tableForm">
 			<tr>
 				<th>登录名</th>
-				<td><input name="cname" class="easyui-validatebox" required="true" missingMessage="请填写登录名称" /></td>
+				<td><input name="cname" class="easyui-validatebox"
+					required="true" missingMessage="请填写登录名称" /></td>
 			</tr>
 			<tr>
 				<th>密码</th>
-				<td><input name="cpwd" type="password" class="easyui-validatebox" required="true" missingMessage="请填写密码" /></td>
+				<td><input name="cpwd" type="password"
+					class="easyui-validatebox" required="true" missingMessage="请填写密码" /></td>
 			</tr>
 			<tr>
 				<th>重复密码</th>
-				<td><input name="rePassword" type="password" class="easyui-validatebox" required="true" missingMessage="请再次填写密码" validType="eqPassword['#regForm input[name=cpwd]']" /></td>
+				<td><input name="rePassword" type="password"
+					class="easyui-validatebox" required="true" missingMessage="请再次填写密码"
+					validType="eqPassword['#regForm input[name=cpwd]']" /></td>
 			</tr>
 		</table>
 	</form>

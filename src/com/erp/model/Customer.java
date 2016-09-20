@@ -1,6 +1,7 @@
 package com.erp.model;
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,8 +20,7 @@ import org.hibernate.annotations.DynamicUpdate;
 @Table(name = "CUSTOMER", catalog = "ERP")
 @DynamicUpdate(true)
 @DynamicInsert(true)
-public class Customer implements java.io.Serializable
-{
+public class Customer implements java.io.Serializable {
 	private static final long serialVersionUID = -2821343605850547602L;
 	private Integer customerId;
 	private String name;
@@ -85,33 +85,27 @@ public class Customer implements java.io.Serializable
 	// Constructors
 
 	/** default constructor */
-	public Customer()
-	{
+	public Customer() {
 	}
 
 	/** minimal constructor */
-	public Customer(String name, String status, Date created)
-	{
+	public Customer(String name, String status, Date created) {
 		this.name = name;
 		this.status = status;
 		this.created = created;
 	}
 
 	/** full constructor */
-	public Customer(String name, String myid, String status, Date created, Date lastmod,
-			Integer creater, Integer modifiyer, Integer classId, String tel, String fax,
-			String url, String email, Integer areaId, String areaName, Integer provinceId,
-			String provinceName, Integer cityId, String cityName, String address, String zip,
-			Integer levelId, String levelName, Integer priceLevel, Integer contactPeriod,
-			Integer sourceId, String sourceName, Integer natureId, String natureName,
-			Integer industryId, String industryName, String mainBusiness, Integer sizeId,
-			String sizeName, Date setupDate, Integer capital, String corporation, Integer creditId,
-			String creditName, String bank, String account, String taxno, String shared,
-			Integer pid, Integer attachmentId, String description, Integer saleId, String saleName,
-			Integer saleOrganizationId, String saleOrganizationName, String customerStatus,
-			String className, Integer empCount, Integer tax, Integer setupAccount,
-			Integer currencyId, String currencyName, String totalSales, String deductionTax)
-	{
+	public Customer(String name, String myid, String status, Date created, Date lastmod, Integer creater,
+			Integer modifiyer, Integer classId, String tel, String fax, String url, String email, Integer areaId,
+			String areaName, Integer provinceId, String provinceName, Integer cityId, String cityName, String address,
+			String zip, Integer levelId, String levelName, Integer priceLevel, Integer contactPeriod, Integer sourceId,
+			String sourceName, Integer natureId, String natureName, Integer industryId, String industryName,
+			String mainBusiness, Integer sizeId, String sizeName, Date setupDate, Integer capital, String corporation,
+			Integer creditId, String creditName, String bank, String account, String taxno, String shared, Integer pid,
+			Integer attachmentId, String description, Integer saleId, String saleName, Integer saleOrganizationId,
+			String saleOrganizationName, String customerStatus, String className, Integer empCount, Integer tax,
+			Integer setupAccount, Integer currencyId, String currencyName, String totalSales, String deductionTax) {
 		this.name = name;
 		this.myid = myid;
 		this.status = status;
@@ -176,654 +170,536 @@ public class Customer implements java.io.Serializable
 	@Id
 	@GeneratedValue
 	@Column(name = "CUSTOMER_ID", unique = true, nullable = false)
-	public Integer getCustomerId()
-	{
+	public Integer getCustomerId() {
 		return this.customerId;
 	}
 
-	public void setCustomerId(Integer customerId )
-	{
+	public void setCustomerId(Integer customerId) {
 		this.customerId = customerId;
 	}
 
 	@Column(name = "NAME", nullable = false, length = 200)
-	public String getName()
-	{
+	public String getName() {
 		return this.name;
 	}
 
-	public void setName(String name )
-	{
+	public void setName(String name) {
 		this.name = name;
 	}
 
 	@Column(name = "MYID", length = 55)
-	public String getMyid()
-	{
+	public String getMyid() {
 		return this.myid;
 	}
 
-	public void setMyid(String myid )
-	{
+	public void setMyid(String myid) {
 		this.myid = myid;
 	}
 
 	@Column(name = "STATUS", nullable = false, length = 1)
-	public String getStatus()
-	{
+	public String getStatus() {
 		return this.status;
 	}
 
-	public void setStatus(String status )
-	{
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "CREATED", nullable = false, length = 10)
-	public Date getCreated()
-	{
+	public Date getCreated() {
 		return this.created;
 	}
 
-	public void setCreated(Date created )
-	{
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "LASTMOD", length = 10)
-	public Date getLastmod()
-	{
+	public Date getLastmod() {
 		return this.lastmod;
 	}
 
-	public void setLastmod(Date lastmod )
-	{
+	public void setLastmod(Date lastmod) {
 		this.lastmod = lastmod;
 	}
 
 	@Column(name = "CREATER")
-	public Integer getCreater()
-	{
+	public Integer getCreater() {
 		return this.creater;
 	}
 
-	public void setCreater(Integer creater )
-	{
+	public void setCreater(Integer creater) {
 		this.creater = creater;
 	}
 
 	@Column(name = "MODIFIYER")
-	public Integer getModifiyer()
-	{
+	public Integer getModifiyer() {
 		return this.modifiyer;
 	}
 
-	public void setModifiyer(Integer modifiyer )
-	{
+	public void setModifiyer(Integer modifiyer) {
 		this.modifiyer = modifiyer;
 	}
 
 	@Column(name = "CLASS_ID")
-	public Integer getClassId()
-	{
+	public Integer getClassId() {
 		return this.classId;
 	}
 
-	public void setClassId(Integer classId )
-	{
+	public void setClassId(Integer classId) {
 		this.classId = classId;
 	}
 
 	@Column(name = "TEL", length = 55)
-	public String getTel()
-	{
+	public String getTel() {
 		return this.tel;
 	}
 
-	public void setTel(String tel )
-	{
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 
 	@Column(name = "FAX", length = 55)
-	public String getFax()
-	{
+	public String getFax() {
 		return this.fax;
 	}
 
-	public void setFax(String fax )
-	{
+	public void setFax(String fax) {
 		this.fax = fax;
 	}
 
 	@Column(name = "URL", length = 200)
-	public String getUrl()
-	{
+	public String getUrl() {
 		return this.url;
 	}
 
-	public void setUrl(String url )
-	{
+	public void setUrl(String url) {
 		this.url = url;
 	}
 
 	@Column(name = "EMAIL", length = 200)
-	public String getEmail()
-	{
+	public String getEmail() {
 		return this.email;
 	}
 
-	public void setEmail(String email )
-	{
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
 	@Column(name = "AREA_ID")
-	public Integer getAreaId()
-	{
+	public Integer getAreaId() {
 		return this.areaId;
 	}
 
-	public void setAreaId(Integer areaId )
-	{
+	public void setAreaId(Integer areaId) {
 		this.areaId = areaId;
 	}
 
 	@Column(name = "AREA_NAME", length = 100)
-	public String getAreaName()
-	{
+	public String getAreaName() {
 		return this.areaName;
 	}
 
-	public void setAreaName(String areaName )
-	{
+	public void setAreaName(String areaName) {
 		this.areaName = areaName;
 	}
 
 	@Column(name = "PROVINCE_ID")
-	public Integer getProvinceId()
-	{
+	public Integer getProvinceId() {
 		return this.provinceId;
 	}
 
-	public void setProvinceId(Integer provinceId )
-	{
+	public void setProvinceId(Integer provinceId) {
 		this.provinceId = provinceId;
 	}
 
 	@Column(name = "PROVINCE_NAME", length = 55)
-	public String getProvinceName()
-	{
+	public String getProvinceName() {
 		return this.provinceName;
 	}
 
-	public void setProvinceName(String provinceName )
-	{
+	public void setProvinceName(String provinceName) {
 		this.provinceName = provinceName;
 	}
 
 	@Column(name = "CITY_ID")
-	public Integer getCityId()
-	{
+	public Integer getCityId() {
 		return this.cityId;
 	}
 
-	public void setCityId(Integer cityId )
-	{
+	public void setCityId(Integer cityId) {
 		this.cityId = cityId;
 	}
 
 	@Column(name = "CITY_NAME", length = 55)
-	public String getCityName()
-	{
+	public String getCityName() {
 		return this.cityName;
 	}
 
-	public void setCityName(String cityName )
-	{
+	public void setCityName(String cityName) {
 		this.cityName = cityName;
 	}
 
 	@Column(name = "ADDRESS", length = 1000)
-	public String getAddress()
-	{
+	public String getAddress() {
 		return this.address;
 	}
 
-	public void setAddress(String address )
-	{
+	public void setAddress(String address) {
 		this.address = address;
 	}
 
 	@Column(name = "ZIP", length = 20)
-	public String getZip()
-	{
+	public String getZip() {
 		return this.zip;
 	}
 
-	public void setZip(String zip )
-	{
+	public void setZip(String zip) {
 		this.zip = zip;
 	}
 
 	@Column(name = "LEVEL_ID")
-	public Integer getLevelId()
-	{
+	public Integer getLevelId() {
 		return this.levelId;
 	}
 
-	public void setLevelId(Integer levelId )
-	{
+	public void setLevelId(Integer levelId) {
 		this.levelId = levelId;
 	}
 
 	@Column(name = "LEVEL_NAME", length = 200)
-	public String getLevelName()
-	{
+	public String getLevelName() {
 		return this.levelName;
 	}
 
-	public void setLevelName(String levelName )
-	{
+	public void setLevelName(String levelName) {
 		this.levelName = levelName;
 	}
 
 	@Column(name = "PRICE_LEVEL")
-	public Integer getPriceLevel()
-	{
+	public Integer getPriceLevel() {
 		return this.priceLevel;
 	}
 
-	public void setPriceLevel(Integer priceLevel )
-	{
+	public void setPriceLevel(Integer priceLevel) {
 		this.priceLevel = priceLevel;
 	}
 
 	@Column(name = "CONTACT_PERIOD")
-	public Integer getContactPeriod()
-	{
+	public Integer getContactPeriod() {
 		return this.contactPeriod;
 	}
 
-	public void setContactPeriod(Integer contactPeriod )
-	{
+	public void setContactPeriod(Integer contactPeriod) {
 		this.contactPeriod = contactPeriod;
 	}
 
 	@Column(name = "SOURCE_ID")
-	public Integer getSourceId()
-	{
+	public Integer getSourceId() {
 		return this.sourceId;
 	}
 
-	public void setSourceId(Integer sourceId )
-	{
+	public void setSourceId(Integer sourceId) {
 		this.sourceId = sourceId;
 	}
 
 	@Column(name = "SOURCE_NAME", length = 200)
-	public String getSourceName()
-	{
+	public String getSourceName() {
 		return this.sourceName;
 	}
 
-	public void setSourceName(String sourceName )
-	{
+	public void setSourceName(String sourceName) {
 		this.sourceName = sourceName;
 	}
 
 	@Column(name = "NATURE_ID")
-	public Integer getNatureId()
-	{
+	public Integer getNatureId() {
 		return this.natureId;
 	}
 
-	public void setNatureId(Integer natureId )
-	{
+	public void setNatureId(Integer natureId) {
 		this.natureId = natureId;
 	}
 
 	@Column(name = "NATURE_NAME", length = 200)
-	public String getNatureName()
-	{
+	public String getNatureName() {
 		return this.natureName;
 	}
 
-	public void setNatureName(String natureName )
-	{
+	public void setNatureName(String natureName) {
 		this.natureName = natureName;
 	}
 
 	@Column(name = "INDUSTRY_ID")
-	public Integer getIndustryId()
-	{
+	public Integer getIndustryId() {
 		return this.industryId;
 	}
 
-	public void setIndustryId(Integer industryId )
-	{
+	public void setIndustryId(Integer industryId) {
 		this.industryId = industryId;
 	}
 
 	@Column(name = "INDUSTRY_NAME", length = 200)
-	public String getIndustryName()
-	{
+	public String getIndustryName() {
 		return this.industryName;
 	}
 
-	public void setIndustryName(String industryName )
-	{
+	public void setIndustryName(String industryName) {
 		this.industryName = industryName;
 	}
 
 	@Column(name = "MAIN_BUSINESS", length = 1000)
-	public String getMainBusiness()
-	{
+	public String getMainBusiness() {
 		return this.mainBusiness;
 	}
 
-	public void setMainBusiness(String mainBusiness )
-	{
+	public void setMainBusiness(String mainBusiness) {
 		this.mainBusiness = mainBusiness;
 	}
 
 	@Column(name = "SIZE_ID")
-	public Integer getSizeId()
-	{
+	public Integer getSizeId() {
 		return this.sizeId;
 	}
 
-	public void setSizeId(Integer sizeId )
-	{
+	public void setSizeId(Integer sizeId) {
 		this.sizeId = sizeId;
 	}
 
 	@Column(name = "SIZE_NAME", length = 200)
-	public String getSizeName()
-	{
+	public String getSizeName() {
 		return this.sizeName;
 	}
 
-	public void setSizeName(String sizeName )
-	{
+	public void setSizeName(String sizeName) {
 		this.sizeName = sizeName;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "SETUP_DATE", length = 10)
-	public Date getSetupDate()
-	{
+	public Date getSetupDate() {
 		return this.setupDate;
 	}
 
-	public void setSetupDate(Date setupDate )
-	{
+	public void setSetupDate(Date setupDate) {
 		this.setupDate = setupDate;
 	}
 
 	@Column(name = "CAPITAL")
-	public Integer getCapital()
-	{
+	public Integer getCapital() {
 		return this.capital;
 	}
 
-	public void setCapital(Integer capital )
-	{
+	public void setCapital(Integer capital) {
 		this.capital = capital;
 	}
 
 	@Column(name = "CORPORATION", length = 55)
-	public String getCorporation()
-	{
+	public String getCorporation() {
 		return this.corporation;
 	}
 
-	public void setCorporation(String corporation )
-	{
+	public void setCorporation(String corporation) {
 		this.corporation = corporation;
 	}
 
 	@Column(name = "CREDIT_ID")
-	public Integer getCreditId()
-	{
+	public Integer getCreditId() {
 		return this.creditId;
 	}
 
-	public void setCreditId(Integer creditId )
-	{
+	public void setCreditId(Integer creditId) {
 		this.creditId = creditId;
 	}
 
 	@Column(name = "CREDIT_NAME", length = 55)
-	public String getCreditName()
-	{
+	public String getCreditName() {
 		return this.creditName;
 	}
 
-	public void setCreditName(String creditName )
-	{
+	public void setCreditName(String creditName) {
 		this.creditName = creditName;
 	}
 
 	@Column(name = "BANK", length = 200)
-	public String getBank()
-	{
+	public String getBank() {
 		return this.bank;
 	}
 
-	public void setBank(String bank )
-	{
+	public void setBank(String bank) {
 		this.bank = bank;
 	}
 
 	@Column(name = "ACCOUNT", length = 55)
-	public String getAccount()
-	{
+	public String getAccount() {
 		return this.account;
 	}
 
-	public void setAccount(String account )
-	{
+	public void setAccount(String account) {
 		this.account = account;
 	}
 
 	@Column(name = "TAXNO", length = 100)
-	public String getTaxno()
-	{
+	public String getTaxno() {
 		return this.taxno;
 	}
 
-	public void setTaxno(String taxno )
-	{
+	public void setTaxno(String taxno) {
 		this.taxno = taxno;
 	}
 
 	@Column(name = "SHARED", length = 200)
-	public String getShared()
-	{
+	public String getShared() {
 		return this.shared;
 	}
 
-	public void setShared(String shared )
-	{
+	public void setShared(String shared) {
 		this.shared = shared;
 	}
 
 	@Column(name = "PID")
-	public Integer getPid()
-	{
+	public Integer getPid() {
 		return this.pid;
 	}
 
-	public void setPid(Integer pid )
-	{
+	public void setPid(Integer pid) {
 		this.pid = pid;
 	}
 
 	@Column(name = "ATTACHMENT_ID")
-	public Integer getAttachmentId()
-	{
+	public Integer getAttachmentId() {
 		return this.attachmentId;
 	}
 
-	public void setAttachmentId(Integer attachmentId )
-	{
+	public void setAttachmentId(Integer attachmentId) {
 		this.attachmentId = attachmentId;
 	}
 
 	@Column(name = "DESCRIPTION", length = 2000)
-	public String getDescription()
-	{
+	public String getDescription() {
 		return this.description;
 	}
 
-	public void setDescription(String description )
-	{
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
 	@Column(name = "SALE_ID")
-	public Integer getSaleId()
-	{
+	public Integer getSaleId() {
 		return this.saleId;
 	}
 
-	public void setSaleId(Integer saleId )
-	{
+	public void setSaleId(Integer saleId) {
 		this.saleId = saleId;
 	}
 
 	@Column(name = "SALE_NAME", length = 55)
-	public String getSaleName()
-	{
+	public String getSaleName() {
 		return this.saleName;
 	}
 
-	public void setSaleName(String saleName )
-	{
+	public void setSaleName(String saleName) {
 		this.saleName = saleName;
 	}
 
 	@Column(name = "SALE_ORGANIZATION_ID")
-	public Integer getSaleOrganizationId()
-	{
+	public Integer getSaleOrganizationId() {
 		return this.saleOrganizationId;
 	}
 
-	public void setSaleOrganizationId(Integer saleOrganizationId )
-	{
+	public void setSaleOrganizationId(Integer saleOrganizationId) {
 		this.saleOrganizationId = saleOrganizationId;
 	}
 
 	@Column(name = "SALE_ORGANIZATION_NAME", length = 55)
-	public String getSaleOrganizationName()
-	{
+	public String getSaleOrganizationName() {
 		return this.saleOrganizationName;
 	}
 
-	public void setSaleOrganizationName(String saleOrganizationName )
-	{
+	public void setSaleOrganizationName(String saleOrganizationName) {
 		this.saleOrganizationName = saleOrganizationName;
 	}
 
 	@Column(name = "CUSTOMER_STATUS", length = 1)
-	public String getCustomerStatus()
-	{
+	public String getCustomerStatus() {
 		return this.customerStatus;
 	}
 
-	public void setCustomerStatus(String customerStatus )
-	{
+	public void setCustomerStatus(String customerStatus) {
 		this.customerStatus = customerStatus;
 	}
 
 	@Column(name = "CLASS_NAME", length = 200)
-	public String getClassName()
-	{
+	public String getClassName() {
 		return this.className;
 	}
 
-	public void setClassName(String className )
-	{
+	public void setClassName(String className) {
 		this.className = className;
 	}
 
 	@Column(name = "EMP_COUNT")
-	public Integer getEmpCount()
-	{
+	public Integer getEmpCount() {
 		return this.empCount;
 	}
 
-	public void setEmpCount(Integer empCount )
-	{
+	public void setEmpCount(Integer empCount) {
 		this.empCount = empCount;
 	}
 
 	@Column(name = "TAX")
-	public Integer getTax()
-	{
+	public Integer getTax() {
 		return this.tax;
 	}
 
-	public void setTax(Integer tax )
-	{
+	public void setTax(Integer tax) {
 		this.tax = tax;
 	}
 
 	@Column(name = "SETUP_ACCOUNT")
-	public Integer getSetupAccount()
-	{
+	public Integer getSetupAccount() {
 		return this.setupAccount;
 	}
 
-	public void setSetupAccount(Integer setupAccount )
-	{
+	public void setSetupAccount(Integer setupAccount) {
 		this.setupAccount = setupAccount;
 	}
 
 	@Column(name = "CURRENCY_ID")
-	public Integer getCurrencyId()
-	{
+	public Integer getCurrencyId() {
 		return this.currencyId;
 	}
 
-	public void setCurrencyId(Integer currencyId )
-	{
+	public void setCurrencyId(Integer currencyId) {
 		this.currencyId = currencyId;
 	}
 
 	@Column(name = "CURRENCY_NAME", length = 55)
-	public String getCurrencyName()
-	{
+	public String getCurrencyName() {
 		return this.currencyName;
 	}
 
-	public void setCurrencyName(String currencyName )
-	{
+	public void setCurrencyName(String currencyName) {
 		this.currencyName = currencyName;
 	}
 
 	@Column(name = "TOTAL_SALES", length = 55)
-	public String getTotalSales()
-	{
+	public String getTotalSales() {
 		return this.totalSales;
 	}
 
-	public void setTotalSales(String totalSales )
-	{
+	public void setTotalSales(String totalSales) {
 		this.totalSales = totalSales;
 	}
 
 	@Column(name = "DEDUCTION_TAX", length = 1)
-	public String getDeductionTax()
-	{
+	public String getDeductionTax() {
 		return this.deductionTax;
 	}
 
-	public void setDeductionTax(String deductionTax )
-	{
+	public void setDeductionTax(String deductionTax) {
 		this.deductionTax = deductionTax;
 	}
 

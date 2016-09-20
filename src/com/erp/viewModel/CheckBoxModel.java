@@ -1,23 +1,22 @@
 package com.erp.viewModel;
 
-public class CheckBoxModel
-{
+public class CheckBoxModel {
 	private String type;
 	private Options options;
-	public String getType()
-	{
+
+	public String getType() {
 		return type;
 	}
-	public void setType(String type )
-	{
+
+	public void setType(String type) {
 		this.type = type;
 	}
-	public Options getOptions()
-	{
+
+	public Options getOptions() {
 		return options;
 	}
-	public void setOptions(Options options )
-	{
+
+	public void setOptions(Options options) {
 		this.options = options;
 	}
 }
